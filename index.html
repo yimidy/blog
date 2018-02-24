@@ -69,6 +69,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/24/hexo命令/" class="article-date">
+  <time datetime="2018-02-24T13:28:47.247Z" itemprop="datePublished">2018-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="title-hexo常用命令"><a href="#title-hexo常用命令" class="headerlink" title="title:## hexo常用命令 ##"></a>title:## hexo常用命令 ##</h2><ol>
+<li><p>环境<br>npm install hexo -g #安装<br>npm update hexo -g #升级<br>hexo init #初始化</p>
+</li>
+<li><p>常用命令<br>hexo n “我的博客” == hexo new “我的博客” #新建文章<br>hexo clean #清除缓存 网页正常情况下可以忽略此条命令（清除缓存文件db.json和生成的静态文件public）<br>hexo g  == hexo generate#生成静态网页<br>hexo s == hexo server #启动服务预览<br>hexo d== hexo deploy #开始部署<br><em>hexo d可与hexo g合并为 hexo d -g</em></p>
+</li>
+</ol>
+<hr>
+<p>服务器<br>hexo server #Hexo 会监视文件变动并自动更新，您无须重启服务器。<br>hexo server -s #静态模式<br>hexo server -p 5000 #更改端口<br>hexo server -i 192.168.1.1 #自定义 IP</p>
+<hr>
+<p>部署<br>HexoBlog部署到git我们需要安装hexo-deployer-git插件，在博客HexoBlog根目录运行：<br>npm install hexo-deployer-git –save<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>
+<p><em>_config.yml 中修改</em><br><strong>deploy:<br>  type: git<br>  repository: git@*</strong>.github.com:<strong><em>/</em></strong>.github.io.git<br>  branch: master**</p>
+<hr>
+<p>主题（next）<br>将主题安装在themes/next目录下<br>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a> themes/next<br>$ git clone <a href="https://github.com/MOxFIVE/hexo-theme-yelee.git" target="_blank" rel="noopener">https://github.com/MOxFIVE/hexo-theme-yelee.git</a> themes/yelee</p>
+<p>配置主题：<br>修改 _config.yml 文件中 theme: next</p>
+<hr>
+<p>草稿的问题<br>可以生成一个草稿： hexo new draft “文章名”<br>草稿发布： hexo p==hexo publish “文章名”<br>草稿默认不会显示在页面上，可以加上–draft参数来进行显示；也可以通过 render_drafts 参数设置为true来预览草稿</p>
+<hr>
+<p>监视文件变动<br>hexo generate #使用 Hexo 生成静态文件快速而且简单<br>hexo generate –watch #监视文件变动</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/24/hexo命令/" data-id="cje1fkdi80002p4rrktz0lsxa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-欢迎使用CSDN-markdown编辑器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/02/24/欢迎使用CSDN-markdown编辑器/" class="article-date">
@@ -209,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/24/欢迎使用CSDN-markdown编辑器/" data-id="cje1ewvuq000200rrpd469x7w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/24/欢迎使用CSDN-markdown编辑器/" data-id="cje1fkdib0003p4rrsc07dfhp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/23/我的博客/" data-id="cje1ewvuh000100rr5qaw9ad3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/23/我的博客/" data-id="cje1fkdi00001p4rrdh2xe3ga" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/23/hello-world/" data-id="cje1ewvtw000000rr08opwhd0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/23/hello-world/" data-id="cje1fkdhr0000p4rrhq3l9f5j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,6 +370,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/02/24/hexo命令/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/02/24/欢迎使用CSDN-markdown编辑器/">(no title)</a>
