@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="##浮动浮动核心就一句话：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。 ##浮动影响  浮动会脱离文档 浮动可以内联排列 浮动会导致父元素高度坍塌 宽度自适应发生了变化： 首先div的默认宽度是width:auto;意思是自动调整宽度. 在不带float的情况下,div的宽度会自动调整至最大化,而在带float的情况下则正好相反,它会自动调整至最小化. -高度没变化di">
+<meta name="description" content="浮动浮动核心就一句话：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。 浮动影响 浮动会脱离文档 浮动可以内联排列 浮动会导致父元素高度坍塌 宽度自适应发生了变化： 首先div的默认宽度是width:auto;意思是自动调整宽度. 在不带float的情况下,div的宽度会自动调整至最大化,而在带float的情况下则正好相反,它会自动调整至最小化. -高度没变化div的默认高">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浮动及清除浮动">
 <meta property="og:url" content="http://yoursite.com/2018/02/26/浮动及清除浮动/index.html">
 <meta property="og:site_name" content="yimidy@blog">
-<meta property="og:description" content="##浮动浮动核心就一句话：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。 ##浮动影响  浮动会脱离文档 浮动可以内联排列 浮动会导致父元素高度坍塌 宽度自适应发生了变化： 首先div的默认宽度是width:auto;意思是自动调整宽度. 在不带float的情况下,div的宽度会自动调整至最大化,而在带float的情况下则正好相反,它会自动调整至最小化. -高度没变化di">
+<meta property="og:description" content="浮动浮动核心就一句话：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。 浮动影响 浮动会脱离文档 浮动可以内联排列 浮动会导致父元素高度坍塌 宽度自适应发生了变化： 首先div的默认宽度是width:auto;意思是自动调整宽度. 在不带float的情况下,div的宽度会自动调整至最大化,而在带float的情况下则正好相反,它会自动调整至最小化. -高度没变化div的默认高">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-26T12:38:09.063Z">
+<meta property="og:updated_time" content="2018-02-26T12:40:40.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浮动及清除浮动">
-<meta name="twitter:description" content="##浮动浮动核心就一句话：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。 ##浮动影响  浮动会脱离文档 浮动可以内联排列 浮动会导致父元素高度坍塌 宽度自适应发生了变化： 首先div的默认宽度是width:auto;意思是自动调整宽度. 在不带float的情况下,div的宽度会自动调整至最大化,而在带float的情况下则正好相反,它会自动调整至最小化. -高度没变化di">
+<meta name="twitter:description" content="浮动浮动核心就一句话：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。 浮动影响 浮动会脱离文档 浮动可以内联排列 浮动会导致父元素高度坍塌 宽度自适应发生了变化： 首先div的默认宽度是width:auto;意思是自动调整宽度. 在不带float的情况下,div的宽度会自动调整至最大化,而在带float的情况下则正好相反,它会自动调整至最小化. -高度没变化div的默认高">
 
 
 
@@ -349,9 +349,8 @@
       
 
       
-        <p>##浮动<br>浮动核心就一句话：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。</p>
-<p>##浮动影响</p>
-<ul>
+        <h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>浮动核心就一句话：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。</p>
+<h2 id="浮动影响"><a href="#浮动影响" class="headerlink" title="浮动影响"></a>浮动影响</h2><ul>
 <li>浮动会脱离文档</li>
 <li>浮动可以内联排列</li>
 <li>浮动会导致父元素高度坍塌</li>
@@ -361,7 +360,7 @@
 </code></pre></li>
 <li>float之后才会有物理属性，这就是块与内联元素相互转化的问题。<pre><code>块元素 -&gt; 内联元素：　display:inline;
 内联元素 -&gt; 块元素：　display:block;
-</code></pre> 相当于：display:inline-block;<br>##清除浮动</li>
+</code></pre> 相当于：display:inline-block;<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2></li>
 </ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">   <span class="attribute">content</span>:<span class="string">""</span>; </span><br><span class="line">   <span class="attribute">display</span>: block; </span><br><span class="line">   <span class="attribute">clear</span>:both; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">:after</span> 选择器向选定的元素之后插入内容 </span><br><span class="line"><span class="selector-tag">content</span><span class="selector-pseudo">:""</span>; 生成内容为空 </span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">block</span>; 生成的元素以块级元素显示, </span><br><span class="line"><span class="selector-tag">clear</span><span class="selector-pseudo">:both</span>; 清除前面元素浮动带来的影响 </span><br><span class="line">相对于空标签闭合浮动的方法 </span><br><span class="line">优势：不破坏文档结构，没有副作用 </span><br><span class="line">弊端：代码量多</span><br></pre></td></tr></table></figure>
 <p><em>css清除浮动的8中方法</em><br> <strong>1. 父级div定义 height</strong></p>
@@ -514,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -591,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动"><span class="nav-number">1.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动影响"><span class="nav-number">2.</span> <span class="nav-text">浮动影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动"><span class="nav-number">3.</span> <span class="nav-text">清除浮动</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
