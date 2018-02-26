@@ -1,3 +1,8 @@
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
 <!DOCTYPE html>
 
 
@@ -5,7 +10,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -81,14 +86,14 @@
 
 <meta name="description" content="title:## hexo常用命令 ## 环境npm install hexo -g #安装npm update hexo -g #升级hexo init #初始化  常用命令hexo n “我的博客” == hexo new “我的博客” #新建文章hexo clean #清除缓存 网页正常情况下可以忽略此条命令（清除缓存文件db.json和生成的静态文件public）hexo g  == h">
 <meta property="og:type" content="article">
-<meta property="og:title" content="杜薏的博客">
+<meta property="og:title" content="yimidy@blog">
 <meta property="og:url" content="http://yoursite.com/2018/02/24/hexo命令/index.html">
-<meta property="og:site_name" content="杜薏的博客">
+<meta property="og:site_name" content="yimidy@blog">
 <meta property="og:description" content="title:## hexo常用命令 ## 环境npm install hexo -g #安装npm update hexo -g #升级hexo init #初始化  常用命令hexo n “我的博客” == hexo new “我的博客” #新建文章hexo clean #清除缓存 网页正常情况下可以忽略此条命令（清除缓存文件db.json和生成的静态文件public）hexo g  == h">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-02-24T13:56:26.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杜薏的博客">
+<meta name="twitter:title" content="yimidy@blog">
 <meta name="twitter:description" content="title:## hexo常用命令 ## 环境npm install hexo -g #安装npm update hexo -g #升级hexo init #初始化  常用命令hexo n “我的博客” == hexo new “我的博客” #新建文章hexo clean #清除缓存 网页正常情况下可以忽略此条命令（清除缓存文件db.json和生成的静态文件public）hexo g  == h">
 
 
@@ -97,7 +102,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -105,7 +110,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -125,7 +130,7 @@
 
 
 
-  <title> | 杜薏的博客</title>
+  <title> | yimidy@blog</title>
   
 
 
@@ -137,7 +142,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -155,7 +160,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">杜薏的博客</span>
+        <span class="site-title">yimidy@blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -185,7 +190,37 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -195,7 +230,27 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
           </a>
         </li>
       
@@ -241,7 +296,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="杜薏的博客">
+      <meta itemprop="name" content="yimidy@blog">
     </span>
 
     
@@ -259,9 +314,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-24T21:28:47+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-24T21:28:47+08:00">
                 2018-02-24
               </time>
             
@@ -404,10 +459,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -421,7 +476,7 @@
                 alt="Yimi Dy" />
             
               <p class="site-author-name" itemprop="name">Yimi Dy</p>
-              <p class="site-description motion-element" itemprop="description">喋喋以碟以喋喋</p>
+              <p class="site-description motion-element" itemprop="description">欢迎您扫一扫上面的微信公众号，订阅我的博客！</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -432,7 +487,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -446,11 +501,41 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yimidy.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yimidy97@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wangli0.github.com" title="Java学习天地" target="_blank">Java学习天地</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -498,7 +583,8 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+ 
+ 
 
 
 
@@ -506,7 +592,8 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+ 
+ 
 
 
 
@@ -553,6 +640,8 @@
   
 
 
+  
+
 
 
 
@@ -593,6 +682,11 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
 
   
 
@@ -605,6 +699,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
@@ -672,6 +773,9 @@
   
 
   
+
+
+
 
 </body>
 </html>
