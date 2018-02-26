@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0b75ff;
+  background: #a4cd79;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2992,20 +2992,44 @@ pre .javascript .function {
   }
 }
 body {
-  background-image: url("/images/background.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2017/12/31/17/06/face-3052778__340.jpg");
   background-attachment: fixed;
-  background-repeat: repeat;
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .content-wrap {
   background: none;
+  margin-top: 47px;
+}
+.post-block {
+  background-color: #fab2a1;
+  margin-top: 60px;
 }
 .post-body {
-  background: #fff;
+  background: #f3f3f3;
+  padding: 0 10px;
 }
-body {
-  background-image: url("/images/background.jpg");
+.post-title-link {
+  margin-top: 20px;
+}
+.posts-expand .post-meta {
+  margin-bottom: 20px;
+}
+.site-meta {
+  padding: 0;
+}
+.header-inner {
+  width: 100%;
+}
+#menu {
+  text-align: center;
+  margin-top: -10px;
+}
+#menu li {
+  float: left;
+}
+.sidebar-inner {
   background-attachment: fixed;
-  background-repeat: repeat;
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
