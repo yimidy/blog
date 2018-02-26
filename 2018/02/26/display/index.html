@@ -87,7 +87,7 @@
 <meta property="og:description" content="W3C中css的display属性 各属性图表简记 block单独占一行，可以设置width,height，maigin四个方向，padding四个方向；元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度； inline多个内联元素占同一行，直到放不下才换行。设置width,height,margin-top,margin- bottom,padding-t">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20170512174453925?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWxlbmFfY2M=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-02-26T13:57:16.006Z">
+<meta property="og:updated_time" content="2018-02-26T14:00:28.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="display">
 <meta name="twitter:description" content="W3C中css的display属性 各属性图表简记 block单独占一行，可以设置width,height，maigin四个方向，padding四个方向；元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度； inline多个内联元素占同一行，直到放不下才换行。设置width,height,margin-top,margin- bottom,padding-t">
@@ -371,10 +371,17 @@
 <h2 id="none"><a href="#none" class="headerlink" title="none"></a>none</h2><p>隐藏该区域，不占实际空间。但对后台来说真实存在，可以获取被隐藏的元素</p>
 <h2 id="display-table-cell"><a href="#display-table-cell" class="headerlink" title="display:table-cell"></a>display:table-cell</h2><p>display:table-cell属性指让标签元素以表格单元格的形式呈现，类似于td标签。<br>单元格有一些比较特别的属性，例如元素的垂直居中对齐，关联伸缩等;<br>故：display:table-cell可以使大小不固定元素的垂直居中</p>
 <h2 id="display-table"><a href="#display-table" class="headerlink" title="display:table"></a>display:table</h2><p>  display：table解决了一部分需要使用表格特性但又不需要表格语义的情况</p>
-<h3 id="父元素宽度固定，想让若干个子元素平分宽度"><a href="#父元素宽度固定，想让若干个子元素平分宽度" class="headerlink" title="父元素宽度固定，想让若干个子元素平分宽度"></a>父元素宽度固定，想让若干个子元素平分宽度</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span>&#123;<span class="attribute">display</span>: table;  <span class="attribute">width</span>: <span class="number">1000px</span>;&#125;</span><br><span class="line"><span class="selector-class">.son</span>&#123;<span class="attribute">display</span>: table-cell;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="块级子元素垂直居中"><a href="#块级子元素垂直居中" class="headerlink" title="块级子元素垂直居中"></a>块级子元素垂直居中</h3><p><em>直接对块级元素使用vertical-align是不能解决这个问题的，vertical-align定义行内元素的基线相对于该元素所在行的基线的垂直对齐）</em></p>
+<pre><code>### 父元素宽度固定，想让若干个子元素平分宽度 ###
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span>&#123;<span class="attribute">display</span>: table;  <span class="attribute">width</span>: <span class="number">1000px</span>;&#125;</span><br><span class="line"><span class="selector-class">.son</span>&#123;<span class="attribute">display</span>: table-cell;&#125;</span><br></pre></td></tr></table></figure>
+
+
+### 块级子元素垂直居中 ###
+
+    *直接对块级元素使用vertical-align是不能解决这个问题的，vertical-align定义行内元素的基线相对于该元素所在行的基线的垂直对齐）*
+
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;<span class="attribute">display</span>: table;&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;<span class="attribute">display</span>: table-cell; <span class="attribute">vertical-align</span>: middle;&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+</code></pre><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
 <li>display: table时padding会失效</li>
 <li>display: table-row时margin、padding同时失效</li>
 <li>display: table-cell时margin会失效</li>
@@ -412,6 +419,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/27/css居中/" rel="prev" title="css水平垂直居中">
+                css水平垂直居中 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -492,7 +503,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -559,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#各属性图表简记"><span class="nav-number">1.</span> <span class="nav-text">各属性图表简记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#block"><span class="nav-number">2.</span> <span class="nav-text">block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inline"><span class="nav-number">3.</span> <span class="nav-text">inline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inline-block"><span class="nav-number">4.</span> <span class="nav-text">inline-block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#none"><span class="nav-number">5.</span> <span class="nav-text">none</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display-table-cell"><span class="nav-number">6.</span> <span class="nav-text">display:table-cell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display-table"><span class="nav-number">7.</span> <span class="nav-text">display:table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父元素宽度固定，想让若干个子元素平分宽度"><span class="nav-number">7.1.</span> <span class="nav-text">父元素宽度固定，想让若干个子元素平分宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级子元素垂直居中"><span class="nav-number">7.2.</span> <span class="nav-text">块级子元素垂直居中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">8.</span> <span class="nav-text">注意</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#各属性图表简记"><span class="nav-number">1.</span> <span class="nav-text">各属性图表简记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#block"><span class="nav-number">2.</span> <span class="nav-text">block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inline"><span class="nav-number">3.</span> <span class="nav-text">inline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inline-block"><span class="nav-number">4.</span> <span class="nav-text">inline-block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#none"><span class="nav-number">5.</span> <span class="nav-text">none</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display-table-cell"><span class="nav-number">6.</span> <span class="nav-text">display:table-cell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display-table"><span class="nav-number">7.</span> <span class="nav-text">display:table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">8.</span> <span class="nav-text">注意</span></a></li></ol></div>
             
 
           </div>
