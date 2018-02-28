@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="定义及用法   position 属性规定元素的定位类型。 属性 static ： 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。 fixed ：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定 注意：fixed会使元素脱离">
+<meta name="description" content="W3C中css的display属性  常用属性1.block单独占一行，可以设置width,height，maigin四个方向，padding四个方向；元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度； 2.inline（默认）多个内联元素占同一行，直到放不下才换行。设置width,height,margin-top,margin- bottom,padd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="position的5种属性">
-<meta property="og:url" content="http://yoursite.com/2018/02/26/position的五种属性/index.html">
+<meta property="og:title" content="display">
+<meta property="og:url" content="http://yoursite.com/2018/02/27/display/index.html">
 <meta property="og:site_name" content="yimidy@blog">
-<meta property="og:description" content="定义及用法   position 属性规定元素的定位类型。 属性 static ： 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。 fixed ：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定 注意：fixed会使元素脱离">
+<meta property="og:description" content="W3C中css的display属性  常用属性1.block单独占一行，可以设置width,height，maigin四个方向，padding四个方向；元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度； 2.inline（默认）多个内联元素占同一行，直到放不下才换行。设置width,height,margin-top,margin- bottom,padd">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-26T13:50:08.164Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20170512174453925?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWxlbmFfY2M=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-02-28T13:14:29.867Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="position的5种属性">
-<meta name="twitter:description" content="定义及用法   position 属性规定元素的定位类型。 属性 static ： 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。 fixed ：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定 注意：fixed会使元素脱离">
+<meta name="twitter:title" content="display">
+<meta name="twitter:description" content="W3C中css的display属性  常用属性1.block单独占一行，可以设置width,height，maigin四个方向，padding四个方向；元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度； 2.inline（默认）多个内联元素占同一行，直到放不下才换行。设置width,height,margin-top,margin- bottom,padd">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170512174453925?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWxlbmFfY2M=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/26/position的五种属性/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/27/display/"/>
 
 
 
 
 
-  <title>position的5种属性 | yimidy@blog</title>
+  <title>display | yimidy@blog</title>
   
 
 
@@ -282,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/position的五种属性/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/display/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yimi Dy">
@@ -299,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">position的5种属性</h1>
+          <h1 class="post-title" itemprop="name headline">display</h1>
         
 
         <div class="post-meta">
@@ -311,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T21:11:47+08:00">
-                2018-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T22:16:53+08:00">
+                2018-02-27
               </time>
             
 
@@ -349,22 +351,35 @@
       
 
       
-        <h2 id="定义及用法"><a href="#定义及用法" class="headerlink" title="定义及用法"></a>定义及用法</h2><p>   position 属性规定元素的定位类型。</p>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
-<li>static ： 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</li>
-<li><p>fixed ：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定</p>
-<pre><code>注意：fixed会使元素脱离文档流，也就是其他元素会填充它偏离后在页面中原本位置的空隙。
-</code></pre></li>
-<li><p>inherit　：规定应该从父元素继承 position 属性的值。</p>
-</li>
-<li><p>absolute : 生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</p>
-<pre><code>注意：absolute会使元素脱离文档流。
-</code></pre></li>
-<li><p>relative : 生成相对定位的元素，相对于其正常位置进行定位。因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。</p>
-<pre><code>注意：relative不会使元素脱离文档流，也就是其他的元素不会调整位置来弥补它偏离后剩下的空隙。
-</code></pre></li>
+        <p><a href="http://www.w3school.com.cn/jsref/prop_style_display.asp" target="_blank" rel="noopener">W3C中css的display属性</a></p>
+<p><img src="http://img.blog.csdn.net/20170512174453925?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWxlbmFfY2M=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="各属性图标简记"></p>
+<h2 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h2><h2 id="1-block"><a href="#1-block" class="headerlink" title="1.block"></a>1.block</h2><p>单独占一行，可以设置width,height，maigin四个方向，padding四个方向；<br>元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度；</p>
+<h2 id="2-inline（默认）"><a href="#2-inline（默认）" class="headerlink" title="2.inline（默认）"></a>2.inline（默认）</h2><p>多个内联元素占同一行，直到放不下才换行。设置width,height,margin-top,margin- bottom,padding-top,padding-bottom无效；<br>元素的宽度就是它包含的文字或图片的宽度，不可改变。</p>
+<h2 id="3-inline-block"><a href="#3-inline-block" class="headerlink" title="3.inline-block"></a>3.inline-block</h2><p>像inline一样放置(比如和它相邻的元素处在同一行)，像block一样表现。比如：input,select,img等。<br>即:和内联元素在同一行，但自身相当于块级元素，可以设置width,height等属性。</p>
+<blockquote>
+<p>适用情况</p>
+</blockquote>
+<p>   不用添加浮动，多个block可以一行显示（比如导航栏）[不适用ie6/7]<br>   使一个inline元素具有高宽边距等而它依然能够保持inline;</p>
+<blockquote>
+<p>inline和inline-block出现的问题</p>
+</blockquote>
+<p>   水平呈现的元素间，换行显示或空格分隔的情况下会有间距</p>
+<blockquote>
+<p>解决方法</p>
+</blockquote>
+<p>● 相邻inline-block元素不分行写，写在同一行并且中间无空格<br>● select父元素使用font-size:0</p>
+<h2 id="4-none"><a href="#4-none" class="headerlink" title="4.none"></a>4.none</h2><p>隐藏该区域，不占实际空间。但对后台来说真实存在，可以获取被隐藏的元素</p>
+<h2 id="display-table-cell"><a href="#display-table-cell" class="headerlink" title="display:table-cell"></a>display:table-cell</h2><p>display:table-cell属性指让标签元素以表格单元格的形式呈现，类似于td标签。<br>单元格有一些比较特别的属性，例如元素的垂直居中对齐，关联伸缩等;<br>故：display:table-cell可以使大小不固定元素的垂直居中</p>
+<h2 id="display-table"><a href="#display-table" class="headerlink" title="display:table"></a>display:table</h2><p>  display：table解决了一部分需要使用表格特性但又不需要表格语义的情况</p>
+<h3 id="父元素宽度固定，想让若干个子元素平分宽度"><a href="#父元素宽度固定，想让若干个子元素平分宽度" class="headerlink" title="父元素宽度固定，想让若干个子元素平分宽度"></a>父元素宽度固定，想让若干个子元素平分宽度</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span>&#123;<span class="attribute">display</span>: table;  <span class="attribute">width</span>: <span class="number">1000px</span>;&#125;</span><br><span class="line"><span class="selector-class">.son</span>&#123;<span class="attribute">display</span>: table-cell;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="块级子元素垂直居中"><a href="#块级子元素垂直居中" class="headerlink" title="块级子元素垂直居中"></a>块级子元素垂直居中</h3><p><em>直接对块级元素使用vertical-align是不能解决这个问题的，vertical-align定义行内元素的基线相对于该元素所在行的基线的垂直对齐）</em></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;<span class="attribute">display</span>: table;&#125;</span><br><span class="line"><span class="selector-class">.son</span> &#123;<span class="attribute">display</span>: table-cell; <span class="attribute">vertical-align</span>: middle;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：虽然display：table解决了避免使用表格的问题，但有几个需要注意的：</strong></p>
+<ul>
+<li>display: table时padding会失效</li>
+<li>display: table-row时margin、padding同时失效</li>
+<li>display: table-cell时margin会失效</li>
 </ul>
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>属性值为absolute对象的z-index属性可以设置层叠显示的次序，它是直接有效的；而属性值为relative对象的z-index属性在设置时要小心，把当前对象的z-index设置为-1是不行的，在firefox中它会无法显示（注意，不是说浏览器有误，而是指如果父对象是根元素body，那么z-index是无效的，任何z-index设置都不会显示在根元素之后，除了IE的解析bug，感谢#19提示），必须设置为0以上，我们如果想让别的对象挡住它，只有将其他对象也设置position为relative，并将z-index属性取一个比它大的值即可。</p>
 
       
     </div>
@@ -389,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/26/浮动及清除浮动/" rel="next" title="浮动及清除浮动">
-                <i class="fa fa-chevron-left"></i> 浮动及清除浮动
+              <a href="/2018/02/27/css居中/" rel="next" title="css水平垂直居中">
+                <i class="fa fa-chevron-left"></i> css水平垂直居中
               </a>
             
           </div>
@@ -399,8 +414,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/27/css居中/" rel="prev" title="css水平垂直居中">
-                css水平垂直居中 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/28/BFC-IFC/" rel="prev" title="BFC && IFC">
+                BFC && IFC <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -549,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义及用法"><span class="nav-number">1.</span> <span class="nav-text">定义及用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提示"><span class="nav-number">3.</span> <span class="nav-text">提示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用属性"><span class="nav-number">1.</span> <span class="nav-text">常用属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-block"><span class="nav-number">2.</span> <span class="nav-text">1.block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-inline（默认）"><span class="nav-number">3.</span> <span class="nav-text">2.inline（默认）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-inline-block"><span class="nav-number">4.</span> <span class="nav-text">3.inline-block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-none"><span class="nav-number">5.</span> <span class="nav-text">4.none</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display-table-cell"><span class="nav-number">6.</span> <span class="nav-text">display:table-cell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display-table"><span class="nav-number">7.</span> <span class="nav-text">display:table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父元素宽度固定，想让若干个子元素平分宽度"><span class="nav-number">7.1.</span> <span class="nav-text">父元素宽度固定，想让若干个子元素平分宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级子元素垂直居中"><span class="nav-number">7.2.</span> <span class="nav-text">块级子元素垂直居中</span></a></li></ol></li></ol></div>
             
 
           </div>
