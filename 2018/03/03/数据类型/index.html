@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="5种简单的数据类型（基本数据类型）：Undefined,Null,Boolean,String,Number1种数据类型（引用数据类型）：Object typeof操作符undefined———(typeof)————undefined（没有定义改变量，或定义了但没有初始化）null————————————-object(特殊的null被认为shi一个空的对象引用)booleannumberstr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据类型">
+<meta property="og:url" content="http://yoursite.com/2018/03/03/数据类型/index.html">
+<meta property="og:site_name" content="yimidy@blog">
+<meta property="og:description" content="5种简单的数据类型（基本数据类型）：Undefined,Null,Boolean,String,Number1种数据类型（引用数据类型）：Object typeof操作符undefined———(typeof)————undefined（没有定义改变量，或定义了但没有初始化）null————————————-object(特殊的null被认为shi一个空的对象引用)booleannumberstr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-03T03:25:46.379Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据类型">
+<meta name="twitter:description" content="5种简单的数据类型（基本数据类型）：Undefined,Null,Boolean,String,Number1种数据类型（引用数据类型）：Object typeof操作符undefined———(typeof)————undefined（没有定义改变量，或定义了但没有初始化）null————————————-object(特殊的null被认为shi一个空的对象引用)booleannumberstr">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/03/数据类型/"/>
+
+
+
+
+
+  <title>数据类型 | yimidy@blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yimidy@blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一天进步一点</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/03/数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yimi Dy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/yimi.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yimidy@blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据类型</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-03T11:24:50+08:00">
+                2018-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>5种简单的数据类型（基本数据类型）：Undefined,Null,Boolean,String,Number<br>1种数据类型（引用数据类型）：Object</p>
+<h2 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h2><p>undefined———(typeof)————undefined（没有定义改变量，或定义了但没有初始化）<br>null————————————-object(特殊的null被认为shi一个空的对象引用)<br>boolean<br>number<br>string<br>function<br>object———————————-object</p>
+<h2 id="Undefined"><a href="#Undefined" class="headerlink" title="Undefined"></a>Undefined</h2><p>使用var声明但未对其初始化</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">message</span>;</span><br><span class="line">   <span class="comment">//var age;</span></span><br><span class="line">   alert(<span class="keyword">message</span>);<span class="comment">//undefined</span></span><br><span class="line">   alert(age);<span class="comment">//产生错误</span></span><br><span class="line">  alert(typeof <span class="keyword">message</span>);<span class="comment">//undefined</span></span><br><span class="line">   alert(typeof age);<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<p>注：当typeof 变量为undefined时，表示改变量未被声明，而不是声明后未初始化</p>
+<h2 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h2><p>null指表示一个空对象指针，故<br>     alert(typeof null);//object</p>
+<p>实际上，undefined的值是派生自null的，故<br>     alert(null==undefined);//true<br>      但 alert(null===undefined);//true</p>
+<p>   <em>有意保存对象的变量而没有对象的值，可以讲对象定义为null值，以便以后判断其是否有值</em></p>
+<h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><p>字面值 true 和 false</p>
+<p>将一个值转换为布尔值： Boolean（）<br>            Boolean（非空字符串）//true            Boolean（“空格 ”）//true               Boolean（“”）//false<br>            Boolean（非0数字）//true                 Boolean（0）//false                          Boolean（NaN）//false<br>            Boolean(除null外的对象) //true          Boolean(null) //false<br>            Boolean(undefined)//false</p>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><p>  十进制<br>  八进制 0+（0~7）<br>  十六进制 0x+（0~9/A~F）<br>   e指数型的数值，3.175e7机器识别最终为31750000<br>   在数值超出规定无穷大限制是表示为Infinity或-Infimity((Infinity是不能参与计算的数值)<br>               判断一个数值是否是有穷性的，用 isFinite()函数<br>                Number.NEGATIVE_INFINITY  (-Infinity)<br>                Number.POSITIVE_INFITY   (Infinity)<br> <strong>NaN</strong> (not a number)反映本身要返回数值的操作数未返回数值的情况<br>                                      alert（number/不是数字的值）;//返回NaN<br>                                      alert（NaN/10）;//NaN   NaN参与的运算，返回都是NaN<br>                                      alert(NaN==NaN);//false NaN与任何数值都不相等，包括本身<br>                                      isNaN()函数，将拿到的值先会转换成数值，成功返回false，如<br>                                                  alert（isNaN(NaN)）;//true<br>                                                  alert（isNaN(“10”)）;//false （可以被转换成10）<br>                                                  alert(isNaN(true));  //false (可以被转换成1)<br>                                                  alert(isNaN(‘blue’)); //true<br>                                                  其过程可以理解为是，先执行valueof(),确定返回的值是否可以转<br>                                            换成数字，若不能，基于这个返回值再用toString（）测试返回值        </p>
+<p> <strong>将非数值转换为数值</strong>： </p>
+<ol>
+<li>Number( )<br> 规则如下：<pre><code>如果是Boolean，true返回1；false返回0
+如果是数字，简单地传入传出
+如果是null，返回0
+如果是undefined，返回NaN
+如果是字符串， Number（‘123’）//123
+                         Number（‘0123’）//123
+                         Number(&apos;1.1&apos;)//1.1
+                         Number(&apos;0xA&apos;)//1.0  十六进制转十进制
+                         Number(&apos;&apos;)//0           Number(&apos;空格&apos;)//0
+                         除上述外任何其他为NaN
+</code></pre>   如果是对象，  Number({ })//NaN</li>
+<li>parseInt( )<br>  忽略字符串前面的空格，直到找到第一个非空格字符；直到解析到非数字字符结束。<br>  如果第一个非空字符不是数字或者是负号，会返回NaN<pre><code>parseInt(&apos; &apos;)//NaN
+parseInt(&apos; -&apos;)//NaN
+parseInt(&apos;123erfd &apos;)//123
+parseInt(&apos; 11.4&apos;)//11        parseInt(11.4)//11
+parseInt(&apos;0xA&apos;)//10          parseInt(&apos;0xA&apos;，16)//10       parseInt(&apos;A&apos;，16)//10   十六进制（推荐使用基数 ）
+parseInt(&apos; 070&apos;)//70  
+</code></pre></li>
+<li>parseFloat( )<pre><code>prseFloat(&apos;123dew&apos;)//123
+prseFloat(&apos;123.2&apos;)//123.2
+prseFloat(&apos;123.2.43&apos;)//123.2
+prseFloat(&apos;0xA&apos;)//0
+prseFloat(&apos;092.3&apos;)//92.3
+prseFloat(&apos;1.12e5&apos;)//112000
+</code></pre></li>
+</ol>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>eg var s=’duyi’; ,在这里单引号双引号无区别</p>
+<ol>
+<li>字符字面量(转义字符)<br> \n 换行<br> \t制表<br> \b退格<br> \r回车<br> \斜杠<br> \’单引号<br> \”双引号</li>
+<li>转换为字符串<br> <em>toString()</em><pre><code>   返回该数值的一个副本，**null和undefined没有这个方法**
+   var s=11；
+ *无参*console.log(s.toString());//&apos;11&apos;
+*带参*console.log(s.toString(2));//&apos;1011&apos;
+</code></pre> string()<pre><code>能将任何类型的值转化为字符串
+如果可以调用toString()方法，则调用该方法（无参），并返回相应结果；
+如果值为null，则返回‘null’
+如果值是undefined，则返回‘undefined’
+</code></pre></li>
+</ol>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>引用类型是一种数据结构，将数据和功能结合起来，常被称为类，但并不妥当；也常被称为对象定义，描述一类对象所具有的属性和方法。<br>引用类型的值（对象）是引用类型的一个实例。</p>
+<blockquote>
+<p>总结：对象是某个特定引用类型的实例。新对象使用new操作符后跟一个构造函数来创建。构造函数本省是一个函数。只不过该函数出于创建新对象的目的而建立。</p>
+</blockquote>
+<h3 id="创建实例方法"><a href="#创建实例方法" class="headerlink" title="创建实例方法"></a>创建实例方法</h3><ol>
+<li>var obj=new Object();<br>2.对象字面量<br>  var obj={<pre><code>name:&apos;duyi&apos;,
+age:&apos;18&apos;
+</code></pre>   };</li>
+</ol>
+<p>或<br>       var obj={};<br>       obj.name=’duyi’;<br>       obj.age=’18’;</p>
+<p>同样，属性名也能用字符串 ,5自动转化为字符串<br>      var obj={<br>          ‘name’:’duyi’,<br>          ‘age’:’18’,<br>          5:2<br>       };</p>
+<h3 id="每个object实例都具有的属性和方法"><a href="#每个object实例都具有的属性和方法" class="headerlink" title="每个object实例都具有的属性和方法"></a>每个object实例都具有的属性和方法</h3><ul>
+<li>constructor：保存着用于创建当前对象的函数</li>
+<li>hasOwnproperty(propertyName):用于检测给定的属性在当前对象实例中（而不是实例原型中）是否存在<pre><code>eg: object.hasOwnproperty(&quot;name&quot;);
+</code></pre></li>
+<li>isprototypeOf(object):用于检测传入的对象是否是当前对象的原型</li>
+<li>propertyIsEnumerable（propertyName）：用于检查给定的属性能否使用for-in语句来枚举</li>
+<li>toLocaleString（）:返回对象的字符串表示，与执行环境的地区对应</li>
+<li>toString（）：返回对象的字符串表示</li>
+<li>valueOf（）：返回对象的字符串，数字或布尔值表示</li>
+</ul>
+<h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><pre><code>var obj={
+   name:&apos;duyi&apos;,
+   age:&apos;18&apos;
+};
+
+alert(obj.name);
+alert(obj[&apos;name&apos;]);    
+</code></pre><h3 id="Array类型"><a href="#Array类型" class="headerlink" title="Array类型"></a>Array类型</h3><p>数组的每一项可以保存任何类型的数据</p>
+<h4 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h4><p>1.构造函数<br>var arr=new Array();<br>var arr=new Array(20);<br>var arr=new Array(“red”,”yellow”,”blue”);<br>2.数组字面量<br>var arr=[];<br>var arr=[“red”,”yellow”,”blue”];<br>var arr=[1,2,3,];//不推荐，生成3项或4项的数组值</p>
+<p>eg:   var arr1=[];<br>        var arr2=[“1”,”2”,”3”];<br>        alert(arr1.length);//0<br>        alert(arr2.length);//3<br>        alert(arr1[0]);//undefined<br>        arr2.length=4;<br>        alert(arr2[3]);//undefined<br>        arr1[0]=’12dx’;<br>        alert(arr1[0]);//‘12dx’<br>        arr2[99]=’98’;<br>        alert(arr2.length);//100</p>
+<h4 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h4><pre><code>object instanceof Array  由于不同框架中对数组定义可能不同，故不适用
+Array.isArray(object)
+</code></pre><h4 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/28/两栏布局，三栏布局（圣杯，双飞翼）/" rel="next" title="两栏布局&&三栏布局（圣杯，双飞翼）">
+                <i class="fa fa-chevron-left"></i> 两栏布局&&三栏布局（圣杯，双飞翼）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/yimi.JPG"
+                alt="Yimi Dy" />
+            
+              <p class="site-author-name" itemprop="name">Yimi Dy</p>
+              <p class="site-description motion-element" itemprop="description">喋喋以碟以喋喋</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yimidy.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yimidy97@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wangli0.github.com" title="Java学习天地" target="_blank">Java学习天地</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof操作符"><span class="nav-number">1.</span> <span class="nav-text">typeof操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Undefined"><span class="nav-number">2.</span> <span class="nav-text">Undefined</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Null"><span class="nav-number">3.</span> <span class="nav-text">Null</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean"><span class="nav-number">4.</span> <span class="nav-text">Boolean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Number"><span class="nav-number">5.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">6.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">7.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建实例方法"><span class="nav-number">7.1.</span> <span class="nav-text">创建实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#每个object实例都具有的属性和方法"><span class="nav-number">7.2.</span> <span class="nav-text">每个object实例都具有的属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问属性"><span class="nav-number">7.3.</span> <span class="nav-text">访问属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array类型"><span class="nav-number">7.4.</span> <span class="nav-text">Array类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数组"><span class="nav-number">7.4.1.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检测数组"><span class="nav-number">7.4.2.</span> <span class="nav-text">检测数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转换方法"><span class="nav-number">7.4.3.</span> <span class="nav-text">转换方法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yimi Dy</span>
+
+  
+</div>
+
+
+ 
+ 
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+ 
+ 
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>
