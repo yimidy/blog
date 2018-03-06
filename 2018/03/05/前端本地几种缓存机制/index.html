@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="浏览器的缓存机制提供将用户数据存储在客户端上的方式，可以利用cookie和session等跟服务端进行数据交互。 cookie和sessioncookie   若不设置时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie也会跟着一起消失。    会话cookie一般不存储在硬盘而是保存在内存中，当然这个行为并不是规范规定的。    对于存储在内存中的cookie，不同">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端本地四种缓存机制">
+<meta property="og:url" content="http://yoursite.com/2018/03/05/前端本地几种缓存机制/index.html">
+<meta property="og:site_name" content="yimidy@blog">
+<meta property="og:description" content="浏览器的缓存机制提供将用户数据存储在客户端上的方式，可以利用cookie和session等跟服务端进行数据交互。 cookie和sessioncookie   若不设置时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie也会跟着一起消失。    会话cookie一般不存储在硬盘而是保存在内存中，当然这个行为并不是规范规定的。    对于存储在内存中的cookie，不同">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/1209205/201709/1209205-20170928000104559-1868896430.png">
+<meta property="og:updated_time" content="2018-03-05T15:37:45.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端本地四种缓存机制">
+<meta name="twitter:description" content="浏览器的缓存机制提供将用户数据存储在客户端上的方式，可以利用cookie和session等跟服务端进行数据交互。 cookie和sessioncookie   若不设置时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie也会跟着一起消失。    会话cookie一般不存储在硬盘而是保存在内存中，当然这个行为并不是规范规定的。    对于存储在内存中的cookie，不同">
+<meta name="twitter:image" content="https://images2017.cnblogs.com/blog/1209205/201709/1209205-20170928000104559-1868896430.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/05/前端本地几种缓存机制/"/>
+
+
+
+
+
+  <title>前端本地四种缓存机制 | yimidy@blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yimidy@blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一天进步一点</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/前端本地几种缓存机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yimi Dy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/yimi.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yimidy@blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端本地四种缓存机制</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T23:41:16+08:00">
+                2018-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>浏览器的缓存机制提供将用户数据存储在客户端上的方式，可以利用cookie和session等跟服务端进行数据交互。</em></p>
+<h2 id="cookie和session"><a href="#cookie和session" class="headerlink" title="cookie和session"></a>cookie和session</h2><h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>   <strong>若不设置时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie也会跟着一起消失。</strong></p>
+<p>   会话cookie一般不存储在硬盘而是保存在内存中，当然这个行为并不是规范规定的。</p>
+<p>   对于存储在内存中的cookie，不同的浏览器有不同的处理方式。</p>
+<p>   <strong>若设置了过期时间，浏览器会把cookie存储到硬盘上，关闭后在打开浏览器这些cookie仍然有效直到超过有效期。</strong></p>
+<pre><code>只要有请求涉及到cookie，cookie就要在服务器和浏览器之间来回传送（这也解释了问什么本地文件不能则是cookie）。而且cookie数据时钟在同源的http请求中国携带（即使不需要），这也是cookie不能太大的原因。正统的cookie分发是通过扩展http协议来实现的，服务器通过http的响应头中加上一行 特殊的指示以提示浏览器按照指示生成响应的cookie。
+
+用户每次请求一次服务器数据，cookie则会随着折线请求发送给h服务器，服务器脚本语言如php等能够处理cookie发送的数据，可以说是否方便。当然用前端也可以生成cookie的，用js对cookie的操作相当频繁，浏览器只提供document.cookie这样一个对象，对cookie的赋值，获取都比较麻烦
+</code></pre><h4 id="document-cookie"><a href="#document-cookie" class="headerlink" title="document.cookie"></a>document.cookie</h4><p>expires属性</p>
+<blockquote>
+<p>指定cookie的生存期，默认情况下cookie是暂时存在的，他们的存储的值只在浏览器回话期间存在，当用户退出浏览器这些cookie也会跟着丢失，如果让cookie存在一段时间，就要为expires属性设置为未来一个过期时间。现在已经被max-age属性所替代，max-age用秒来设置cookie的 生存期。</p>
+</blockquote>
+<p>path属性</p>
+<blockquote>
+<p>它指定跟cookie关联在一起的网页。在默认情况下cookie会与创建它的额昂也，该网页处于同一目录下 的网页以及与这个网页所在目录下的子目录下的网页关联</p>
+</blockquote>
+<p>domain属性</p>
+<blockquote>
+<p>domain属性可以使多个 web服务器共享cookie。domain属性的默认值是创建cookiie的网页所在服务器的主机名。不能将cookie所在域设置成服务器所在域之外的域。例如让位于order.damonare.cn的服务器能够读取catalog.damonare.cn设置的cookie值。如果catalog.damonare.cn的页面创建的cookie把自己的path属性设置为“/”，把domain属性设置成“.damonare.cn”，那么所有位于catalog.damonare.cn的网页和所有位于orlders.damonare.cn的网页，以及位于damonare.cn域的其他服务器上的网页都可以访问这个cookie。</p>
+</blockquote>
+<p>secure属性</p>
+<blockquote>
+<p>踏实一个布尔值，指在网络上如何传输cookie，默认是不安全的，通过一个普通的http连接传输</p>
+</blockquote>
+<p> <em>cookie是服务器发给客户端的特殊信息，cookie一文本的方式保存字客户端，每次请求都要带上它。</em></p>
+<h3 id="session"><a href="#session" class="headerlink" title="session"></a>session</h3><p>  当某程序需要为某个客户端的请求创建一个session时，服务器首先检查这个客户端的请求里是否包含了一个session的标识（session id），如果已经包含说明以前为此客户端创建过session，服务器就按照session id将这个session检索出来使用；如果客户端请求不包含session id，则为客户端创建一个session并生成一个与此session相关的session id，session id 应该是一个既不重复，有不容易被找到规律的仿造字符串，这个session id将在本次响应中返回给客户端保存。保存这个session id的方式可以采用cookie，这样在交互过程中浏览器可以自动按照规则就把这个标识发送给服务器。一般这个cookie的名字都类似于SESSIONID。但cookie可以被认为禁止，则必须要其他机制以便在cookie被禁止的时候依然能够吧session id传回给你服务器。经常被使用的一种技术叫URL重写，就是把session id直接附加在url路径的后面。比如：“<a href="http://damonare.cn?sessionid=123456”或通过response.encodeURL(url)" target="_blank" rel="noopener">http://damonare.cn?sessionid=123456”或通过response.encodeURL(url)</a> 进行实现；还有一种技术叫做表单隐藏字段，就是服务器会自动修改表单，添加一个隐藏字段，以便在表单提交时能够把sessionid传递会服务器。比如：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">form</span> name=<span class="string">"testform"</span> action=<span class="string">"/xxx"</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"hidden"</span> name=<span class="string">"sessionid"</span> value=<span class="string">"123456"</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"text"</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">form</span>&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>API对encodeURL的结束为：</strong><br>当浏览器支持Cookie时，url不做任何处理；<br>当浏览器不支持Cookie的时候，将会重写URL将SessionID拼接到访问地址后。</p>
+<h3 id="cookie-amp-session的区别"><a href="#cookie-amp-session的区别" class="headerlink" title="cookie&amp;session的区别"></a>cookie&amp;session的区别</h3><p>其都是用来跟踪浏览器用户身份的会话方式。</p>
+<p>区别如下：</p>
+<ol>
+<li><p>保持状态<br> cookie保存在浏览器端<br> session保存在服务器端</p>
+</li>
+<li><p>存储内容<br> cokie只能存储字符串类型 ，以文本的方式</p>
+</li>
+<li><p>存储大小<br> 单个cookie保存的数据不超过4kb，很多浏览器都限制一个站点最多保存20个cookie<br> session大小没有限制</p>
+</li>
+<li><p>安全性<br>cookie不是很安全，别人可以分析存放在本地 的cookie，并进行cookie欺骗，cookie截获；<br>session安全性大于cookie。 </p>
+</li>
+</ol>
+<blockquote>
+<ul>
+<li>SESSIONID存储在cookie中，若要攻击session，首先要龚波    cookie；</li>
+<li>SESSIONID 要有人登录，或者启动session_start才会有，所有龚波cookie也不一定会有SESSIONID；</li>
+<li>第二次启动session_start后，第一次的session就失效了，session过期后，SESSIONID也失效了</li>
+<li>SSESSIONID是加密的<br><strong>故：攻击者必须在短时间内龚波加密的SESSIONID很难</strong></li>
+</ul>
+</blockquote>
+<p>5.存储路径<br>   cookie中如果设置了路径参数，那么同一个网站中不同路径下的cookie互相是访问不到的<br>   session不能区分路径，同一个用户在访问一个网站期间，所有的session在任何一个地方都可以访问到</p>
+<p>6.应用场景<br>   <strong>session会在一定时间内保存到服务器上。当访问较多，会比较占用你服务器的性能，考虑减轻服务器性能方面，使用cookie较好</strong></p>
+<p>   建议将登录信息等重要信息存放为session<br>   其他信息如果需要保留，可以放在cookie</p>
+<blockquote>
+<p>cookie<br>               （1）.判断用户是否登陆过网站，以便下次登录的时候能够实现自动登录（或记住密码）。如果我们删除了cookie，则每次登录要重新填写信息<br>               （2）.保存上次登陆的时间<br>               （3）.保存上次查看的页面<br>               （4）.浏览计数<br>   <img src="https://images2017.cnblogs.com/blog/1209205/201709/1209205-20170928000104559-1868896430.png" alt="cookie"></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>session（用来保存每个用户的专用信息）<br>                  （1）.网上商城的购物车<br>                  （2）.保存用户登录信息<br>                  （3）.将某些数据存入session中，共不同用户的统一页面使用<br>                  （4）.防止用户非法登录</p>
+</blockquote>
+<p>7.缺点</p>
+<blockquote>
+<p>cookie      （1）大小受限<br>                    （2）用户可以操作（禁止）cookie，使功能受限<br>                    （3）安全性低<br>                    （4）有些状态不可能保存到客户端<br>                    （5）每次访问都要传送cookie给服务器，浪费宽带<br>                    （6）cookie路径的概念，可以限制cookie只属于某个路径下</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>session        （1）session保存的东西越多，就越占服务器内存，对于用户在线人数较多的网站，服务器的压力会比较大<br>                      （2）依赖cookie（SESSIONID保存在cookie中），若cookie禁用，则要重写url，不安全<br>                      （3）创建session变量有很大的 随意性，可随时调用，不需要开发者做精确的处理，所以，过渡使用session变量将会导致代码不好维护与可读性差</p>
+</blockquote>
+<h2 id="webStorage"><a href="#webStorage" class="headerlink" title="webStorage"></a>webStorage</h2><p>webStorage的目的是克服有cookie所带来的一些限制，当数据需要被严格控制在客户端，不需要持续的将数据发送给服务端；cookie存储大小有限制，为实现大量数据存储。</p>
+<p>webStorage的两个目标：<br>（1）提供一种在cookie之外的存储会话数据的路径<br>（2）提供一种存储大量可以跨会话存在的数据的机制</p>
+<p>html5的webStorage的两种API：<br>    localStorage（本地存储）<br>    sessionStorage（会话存储）</p>
+<p>1、生命周期<br>     localStorage:localStorage的生命周期是永久的，关闭页面或浏览器之后localStorage中的数据也不会消失。      localStorage除非主动删除数据，否则数据永远不会消失。</p>
+<p>　sessionStorage的生命周期是在仅在当前会话下有效。sessionStorage引入了一个“浏览器窗口”的概念，sessionStorage是在同源的窗口中始终存在的数据。只要这个浏览器窗口没有关闭，即使刷新页面或者进入同源另一个页面，数据依然存在。但是sessionStorage在关闭了浏览器窗口后就会被销毁。同时独立的打开同一个窗口同一个页面，sessionStorage也是不一样的。</p>
+<p>2、存储大小<br>   localStorage和sessionStorage的存储数据大小一般都是：5MB</p>
+<p>3、存储位置<br>localStorage和sessionStorage都保存在客户端，不与服务器进行交互通信。</p>
+<p>4、存储内容类型<br>localStorage和sessionStorage只能存储字符串类型，对于复杂的对象可以使用ECMAScript提供的JSON对象的stringify和parse来处理</p>
+<p>5、获取方式<br>localStorage：window.localStorage;<br>sessionStorage：window.sessionStorage;。</p>
+<p>6、应用场景<br>localStoragese：常用于长期登录（+判断用户是否已登录），适合长期保存在本地的数据。<br>sessionStorage：敏感账号一次性登录；</p>
+<p>cencenyue<br>浅谈session,cookie,sessionStorage,localStorage的区别及应用场景<br>浏览器的缓存机制提供了可以将用户数据存储在客户端上的方式，可以利用cookie,session等跟服务端进行数据交互。</p>
+<p>一、cookie和session</p>
+<p>cookie和session都是用来跟踪浏览器用户身份的会话方式。</p>
+<p>区别：</p>
+<p>1、保持状态：cookie保存在浏览器端，session保存在服务器端</p>
+<p>2、使用方式：</p>
+<p>（1）cookie机制：如果不在浏览器中设置过期时间，cookie被保存在内存中，生命周期随浏览器的关闭而结束，这种cookie简称会话cookie。如果在浏览器中设置了cookie的过期时间，cookie被保存在硬盘中，关闭浏览器后，cookie数据仍然存在，直到过期时间结束才消失。</p>
+<pre><code>Cookie是服务器发给客户端的特殊信息，cookie是以文本的方式保存在客户端，每次请求时都带上它
+</code></pre><p>（2）session机制：当服务器收到请求需要创建session对象时，首先会检查客户端请求中是否包含sessionid。如果有sessionid，服务器将根据该id返回对应session对象。如果客户端请求中没有sessionid，服务器会创建新的session对象，并把sessionid在本次响应中返回给客户端。通常使用cookie方式存储sessionid到客户端，在交互中浏览器按照规则将sessionid发送给服务器。如果用户禁用cookie，则要使用URL重写，可以通过response.encodeURL(url) 进行实现；API对encodeURL的结束为，当浏览器支持Cookie时，url不做任何处理；当浏览器不支持Cookie的时候，将会重写URL将SessionID拼接到访问地址后。</p>
+<p>3、存储内容：cookie只能保存字符串类型，以文本的方式；session通过类似与Hashtable的数据结构来保存，能支持任何类型的对象(session中可含有多个对象)</p>
+<p>4、存储的大小：cookie：单个cookie保存的数据不能超过4kb；session大小没有限制。</p>
+<p>5、安全性：cookie：针对cookie所存在的攻击：Cookie欺骗，Cookie截获；session的安全性大于cookie。</p>
+<p>　　　　　　原因如下：（1）sessionID存储在cookie中，若要攻破session首先要攻破cookie；</p>
+<p>　　　　　　　　　　　（2）sessionID是要有人登录，或者启动session_start才会有，所以攻破cookie也不一定能得到sessionID；</p>
+<p>　　　　　　　　　　　（3）第二次启动session_start后，前一次的sessionID就是失效了，session过期后，sessionID也随之失效。</p>
+<p>　　　　　　　　　　　（4）sessionID是加密的</p>
+<p>　　　　　　　　　　　（5）综上所述，攻击者必须在短时间内攻破加密的sessionID，这很难。</p>
+<p>6、应用场景：</p>
+<p>cookie：（1）判断用户是否登陆过网站，以便下次登录时能够实现自动登录（或者记住密码）。如果我们删除cookie，则每次登录必须从新填写登录的相关信息。</p>
+<p>　　　　（2）保存上次登录的时间等信息。</p>
+<p>　　　　（3）保存上次查看的页面</p>
+<p>　　　　（4）浏览计数</p>
+<p>session：Session用于保存每个用户的专用信息，变量的值保存在服务器端，通过SessionID来区分不同的客户。</p>
+<p>　　（1）网上商城中的购物车</p>
+<p>　　（2）保存用户登录信息</p>
+<p>　　（3）将某些数据放入session中，供同一用户的不同页面使用</p>
+<p>　　（4）防止用户非法登录</p>
+<p> 7、缺点：cookie：（1）大小受限</p>
+<p>　　　　　　　　（2）用户可以操作（禁用）cookie，使功能受限</p>
+<p>　　　　　　　　（3）安全性较低</p>
+<p>　　　　　　　　（4）有些状态不可能保存在客户端。</p>
+<p>　　　　　　　　（5）每次访问都要传送cookie给服务器，浪费带宽。</p>
+<p>　　　　　　　　（6）cookie数据有路径（path）的概念，可以限制cookie只属于某个路径下。</p>
+<p> 　　　　session：（1）Session保存的东西越多，就越占用服务器内存，对于用户在线人数较多的网站，服务器的内存压力会比较大。</p>
+<p>　　　　　　　　（2）依赖于cookie（sessionID保存在cookie），如果禁用cookie，则要使用URL重写，不安全</p>
+<p>　　　　　　　　（3）创建Session变量有很大的随意性，可随时调用，不需要开发者做精确地处理，所以，过度使用session变量将会导致代码不可读而且不好维护。</p>
+<h2 id="WebStorage"><a href="#WebStorage" class="headerlink" title="WebStorage"></a>WebStorage</h2><p>WebStorage的目的是克服由cookie所带来的一些限制，当数据需要被严格控制在客户端时，不需要持续的将数据发回服务器。</p>
+<p>WebStorage两个主要目标：（1）提供一种在cookie之外存储会话数据的路径。（2）提供一种存储大量可以跨会话存在的数据的机制。</p>
+<p>HTML5的WebStorage提供了两种API：localStorage（本地存储）和sessionStorage（会话存储）。</p>
+<p>sessionStorage &amp;&amp; localStorage 是不会通过http请求的，所以操作它的方法一般是js。</p>
+<h3 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h3><p>这是一种持久化的存储方式，也就是说如果不手动清除，数据就永远不会过期。<br>它也是采用Key - Value的方式存储数据，底层数据接口是sqlite，按域名将数据分别保存到对应数据库文件里。它能保存更大的数据（IE8上是10MB，Chrome是5MB），同时保存的数据不会再发送给服务器，避免带宽浪费。</p>
+<h4 id="属性方法"><a href="#属性方法" class="headerlink" title="属性方法"></a>属性方法</h4><p>localStorage.length    获得storage中的个数<br>localStorage.key(n)    获得storage中第n个元素对的键值（第一个元素是0）<br>localStorage.getItem(key)    获取键值key对应的值<br>localStorage.key    获取键值key对应的值<br>localStorage.setItem(key, value)    添加数据，键值为key，值为value<br>localStorage.removeItem(key)    移除键值为key的数据<br>localStorage.clear()    清除所有数据</p>
+<h4 id="localStorage的缺点"><a href="#localStorage的缺点" class="headerlink" title="localStorage的缺点"></a>localStorage的缺点</h4><p>① localStorage大小限制在500万字符左右，各个浏览器不一致<br>② localStorage在隐私模式下不可读取<br>③ localStorage本质是在读写文件，数据多的话会比较卡（firefox会一次性将数据导入内存，想想就觉得吓人啊）<br>④ localStorage不能被爬虫爬取，不要用它完全取代URL传参</p>
+<h3 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h3><p>和服务器端使用的session类似，是一种会话级别的缓存，关闭浏览器会数据会被清除。不过有点特别的是它的作用域是窗口级别的，也就是说不同窗口间的sessionStorage数据不能共享的。使用方法（和localStorage完全相同）：</p>
+<h4 id="属性方法-1"><a href="#属性方法-1" class="headerlink" title="属性方法"></a>属性方法</h4><p>sessionStorage.length    获得storage中的个数<br>sessionStorage.key(n)    获得storage中第n个元素对的键值（第一个元素是0）<br>sessionStorage.getItem(key)    获取键值key对应的值<br>sessionStorage.key    获取键值key对应的值<br>sessionStorage.setItem(key, value)    添加数据，键值为key，值为value<br>sessionStorage.removeItem(key)    移除键值为key的数据<br>sessionStorage.clear()    清除所有数据</p>
+<h3 id="localStorage-amp-amp-sessionStorage的区别"><a href="#localStorage-amp-amp-sessionStorage的区别" class="headerlink" title="localStorage&amp;&amp;sessionStorage的区别"></a>localStorage&amp;&amp;sessionStorage的区别</h3><p>1、生命周期：localStorage:localStorage的生命周期是永久的，关闭页面或浏览器之后localStorage中的数据也不会消失。localStorage除非主动删除数据，否则数据永远不会消失。</p>
+<p>　　　　　　  sessionStorage的生命周期是在仅在当前会话下有效。sessionStorage引入了一个“浏览器窗口”的概念，sessionStorage是在同源的窗口中始终存在的数据。只要这个浏览器窗口没有关闭，即使刷新页面或者进入同源另一个页面，数据依然存在。但是sessionStorage在关闭了浏览器窗口后就会被销毁。同时独立的打开同一个窗口同一个页面，sessionStorage也是不一样的。</p>
+<p>2、存储大小：localStorage和sessionStorage的存储数据大小一般都是：5MB</p>
+<p>3、存储位置：localStorage和sessionStorage都保存在客户端，不与服务器进行交互通信。</p>
+<p>4、存储内容类型：localStorage和sessionStorage只能存储字符串类型，对于复杂的对象可以使用ECMAScript提供的JSON对象的stringify和parse来处理</p>
+<p>5、获取方式：localStorage：window.localStorage;；sessionStorage：window.sessionStorage;。</p>
+<p>6、应用场景：localStoragese：常用于长期登录（+判断用户是否已登录），适合长期保存在本地的数据。sessionStorage：敏感账号一次性登录；</p>
+<h3 id="WebStorage的优点"><a href="#WebStorage的优点" class="headerlink" title="WebStorage的优点"></a>WebStorage的优点</h3><p>（1）存储空间更大：cookie为4KB，而WebStorage是5MB；</p>
+<p>（2）节省网络流量：WebStorage不会传送到服务器，存储在本地的数据可以直接获取，也不会像cookie一样美词请求都会传送到服务器，所以减少了客户端和服务器端的交互，节省了网络流量；</p>
+<p>（3）临时存储：对于那种只需要在用户浏览一组页面期间保存而关闭浏览器后就可以丢弃的数据，sessionStorage会非常方便；</p>
+<p>（4）快速显示：有的数据存储在WebStorage上，再加上浏览器本身的缓存。获取数据时可以从本地获取会比从服务器端获取快得多，所以速度更快；</p>
+<p>（5）安全性：WebStorage不会随着HTTP header发送到服务器端，所以安全性相对于cookie来说比较高一些，不会担心截获，但是仍然存在伪造问题；</p>
+<p>（6）WebStorage提供了一些方法，数据操作比cookie方便：</p>
+<p>　　　　setItem (key, value) ——  保存数据，以键值对的方式储存信息。<br>             getItem (key) ——  获取数据，将键值传入，即可获取到对应的value值。<br>             removeItem (key) ——  删除单个数据，根据键值移除对应的信息。<br>             clear () ——  删除所有的数据<br>             key (index) —— 获取某个索引的key</p>
+<h2 id="sessionStorage、localStorage和cookie的区别"><a href="#sessionStorage、localStorage和cookie的区别" class="headerlink" title="sessionStorage、localStorage和cookie的区别"></a>sessionStorage、localStorage和cookie的区别</h2><p>共同点：都是保存在浏览器端、且同源的 </p>
+<p>区别：<br>1、cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递，而sessionStorage和localStorage不会自动把数据发送给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下<br>2、存储大小限制也不同，cookie数据不能超过4K，同时因为每次http请求都会携带cookie、所以cookie只适合保存很小的数据，如会话标识。sessionStorage和localStorage虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大<br>3、数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭之前有效；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie：只在设置的cookie过期时间之前有效，即使窗口关闭或浏览器关闭<br>4、作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localstorage在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的<br>5、web Storage支持事件通知机制，可以将数据更新的通知发送给监听者<br>6、web Storage的api接口使用更方便</p>
+<h2 id="浏览器本地存储与服务器端存储的区别"><a href="#浏览器本地存储与服务器端存储的区别" class="headerlink" title="浏览器本地存储与服务器端存储的区别"></a>浏览器本地存储与服务器端存储的区别</h2><p>其实数据既可以在浏览器本地存储，也可以在服务器端存储<br>浏览器可以保存一些数据，需要的时候直接从本地存取，sessionStorage、localStorage和cookie都是由浏览器存储在本地的数据<br>服务器端也可以保存所有用户的所有数据，但需要的时候浏览器要向服务器请求数据。 </p>
+<p>1、服务器端可以保存用户的持久数据，如数据库和云存储将用户的大量数据保存在服务器端<br>2、服务器端也可以保存用户的临时会话数据，服务器端的session机制，如jsp的session对象，数据保存在服务器上，</p>
+<p>实际上，服务器和浏览器之间仅需传递session id即可，服务器根据session id找到对应用户的session对象，会话数据仅在一段时间内有效，这个时间就是server端设置的session有效期</p>
+<p>服务器端保存所有的用户的数据，所以服务器端的开销较大，而浏览器端保存则把不同用户需要的数据分别保存在用户各自的浏览器中，浏览器端一般只用来存储小数据，而非服务可以存储大数据或小数据服务器存储数据安全一些，浏览器只适合存储一般数据</p>
+<p><a href="http://www.techug.com/post/same-origin-policy.html" target="_blank" rel="noopener">浏览器的同源政策链接</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/本地对象、内置对象、宿主对象/" rel="next" title="本地对象、内置对象、宿主对象和自定义对象">
+                <i class="fa fa-chevron-left"></i> 本地对象、内置对象、宿主对象和自定义对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/yimi.JPG"
+                alt="Yimi Dy" />
+            
+              <p class="site-author-name" itemprop="name">Yimi Dy</p>
+              <p class="site-description motion-element" itemprop="description">喋喋以碟以喋喋</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yimidy.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yimidy97@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wangli0.github.com" title="Java学习天地" target="_blank">Java学习天地</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie和session"><span class="nav-number">1.</span> <span class="nav-text">cookie和session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">1.1.</span> <span class="nav-text">cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#document-cookie"><span class="nav-number">1.1.1.</span> <span class="nav-text">document.cookie</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session"><span class="nav-number">1.2.</span> <span class="nav-text">session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie-amp-session的区别"><span class="nav-number">1.3.</span> <span class="nav-text">cookie&amp;session的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webStorage"><span class="nav-number">2.</span> <span class="nav-text">webStorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebStorage"><span class="nav-number">3.</span> <span class="nav-text">WebStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">3.1.</span> <span class="nav-text">localStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性方法"><span class="nav-number">3.1.1.</span> <span class="nav-text">属性方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#localStorage的缺点"><span class="nav-number">3.1.2.</span> <span class="nav-text">localStorage的缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">3.2.</span> <span class="nav-text">sessionStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性方法-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">属性方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage-amp-amp-sessionStorage的区别"><span class="nav-number">3.3.</span> <span class="nav-text">localStorage&amp;&amp;sessionStorage的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WebStorage的优点"><span class="nav-number">3.4.</span> <span class="nav-text">WebStorage的优点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sessionStorage、localStorage和cookie的区别"><span class="nav-number">4.</span> <span class="nav-text">sessionStorage、localStorage和cookie的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器本地存储与服务器端存储的区别"><span class="nav-number">5.</span> <span class="nav-text">浏览器本地存储与服务器端存储的区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yimi Dy</span>
+
+  
+</div>
+
+
+ 
+ 
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+ 
+ 
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>
