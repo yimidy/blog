@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="内容三大标签概念介绍1.源代码 源代码简单来理解就是浏览器解释网页给搜索引擎看的“语言”，搜索引擎看到的东西和我妈看到的不一样。 2.title标签 &amp;lt;title&amp;gt;搜狐-中国最大的门户网站&amp;lt;/title&amp;gt; 3.keywords标签 &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;搜狐，门户网站，新媒体，网络媒体，新闻，财经，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SEO基础">
+<meta property="og:url" content="http://yoursite.com/2018/03/07/SEO基础/index.html">
+<meta property="og:site_name" content="yimidy@blog">
+<meta property="og:description" content="内容三大标签概念介绍1.源代码 源代码简单来理解就是浏览器解释网页给搜索引擎看的“语言”，搜索引擎看到的东西和我妈看到的不一样。 2.title标签 &amp;lt;title&amp;gt;搜狐-中国最大的门户网站&amp;lt;/title&amp;gt; 3.keywords标签 &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;搜狐，门户网站，新媒体，网络媒体，新闻，财经，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-09T11:10:41.167Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SEO基础">
+<meta name="twitter:description" content="内容三大标签概念介绍1.源代码 源代码简单来理解就是浏览器解释网页给搜索引擎看的“语言”，搜索引擎看到的东西和我妈看到的不一样。 2.title标签 &amp;lt;title&amp;gt;搜狐-中国最大的门户网站&amp;lt;/title&amp;gt; 3.keywords标签 &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;搜狐，门户网站，新媒体，网络媒体，新闻，财经，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/07/SEO基础/"/>
+
+
+
+
+
+  <title>SEO基础 | yimidy@blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yimidy@blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一天进步一点</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/SEO基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yimi Dy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/yimi.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yimidy@blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SEO基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T21:33:18+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="三大标签"><a href="#三大标签" class="headerlink" title="三大标签"></a>三大标签</h2><h3 id="概念介绍"><a href="#概念介绍" class="headerlink" title="概念介绍"></a>概念介绍</h3><p>1.源代码</p>
+<pre><code>源代码简单来理解就是浏览器解释网页给搜索引擎看的“语言”，搜索引擎看到的东西和我妈看到的不一样。
+</code></pre><p>2.title标签</p>
+<pre><code>&lt;title&gt;搜狐-中国最大的门户网站&lt;/title&gt;
+</code></pre><p>3.keywords标签</p>
+<pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;搜狐，门户网站，新媒体，网络媒体，新闻，财经，体育，娱乐...&quot;/&gt;
+</code></pre><p>4.description标签</p>
+<pre><code>&lt;meta name=&quot;Description&quot; content=&quot;搜狐是全球最大的中文门户网站&quot;/&gt;
+</code></pre><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p><strong>1.title标签：</strong></p>
+<p>这是一个页面中最重要的标签之一，搜索引擎判断页面属性，最为重要的参考。</p>
+<p><strong>2.keywords标签</strong></p>
+<p>它是关键词的意思，但只是放置关键词的地方，以前这个标签很重要，现在已经被搜索引擎放弃，甚至成为判断网站是否过渡优化的依据。keywords标签建议不写任何东西。</p>
+<p><strong>3.description标签</strong></p>
+<p>它自身对SEO的影响可以忽略不计，但是会直接关系到用户体验和点击率，而这些确实会影响到SEO。</p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>SEO真正的价值是带来定向的客户，定向客户是通过搜索一些关键词来到我们网站的，这些客户要搜索的词语就是关键词。</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>1.主关键词</p>
+<p>我们用最高权重页面（比如首页）去优化的词我们叫做主关键词，使我们将来的网站客户客户搜索量最大、商业价值也最大的词。比如：“手机”</p>
+<p>2.长尾关键词</p>
+<p>更主关键词有关，但搜索量没有它大的一些词，一般用来做网页优化。比如：“诺基亚手机在北京哪里有卖？”</p>
+<p>注意：主关键词和长尾关键词都是相对的。比如“长城汽车”这个词，在长城汽车官网就当做主关键词来优化，但是它对于汽车之家这个网站就是一个长尾关键词。</p>
+<h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><p>文章主要由文章标题和文章内容组成。</p>
+<h3 id="文章标题"><a href="#文章标题" class="headerlink" title="文章标题"></a>文章标题</h3><ol>
+<li>给人看的</li>
+<li>给SEO搜索引擎看的，在源代码中的<tilte>部分</tilte></li>
+</ol>
+<h3 id="文章内容"><a href="#文章内容" class="headerlink" title="文章内容"></a>文章内容</h3><ol>
+<li>给人看的</li>
+<li>给SEO搜索引擎看的，为了让给搜索引擎更容易抓取，排名更高。<strong>文章是我们优化网站的一个必要手段</strong>，在“内容为王”的基础上，对于搜索引擎来讲文章就是最终要的。</li>
+</ol>
+<p>分为 </p>
+<pre><code>1). 原创：搜索引擎收录过的
+2). 伪原创：复制粘贴原创的文章
+</code></pre><h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><p>在上述讲文章对于搜索引擎的重要性，但可想而知，搜索引擎是看不懂文章的，所以它只能从用户行为来推断网页的质量。<br>举例：</p>
+<ol>
+<li>用户在网页上停留的时间</li>
+<li>点击该网页的数量</li>
+<li>用户的收藏数量</li>
+<li>别的网页对该网页的推荐数量</li>
+</ol>
+<p><strong>网页的质量提高，对于该网站的信任度也就提高了。</strong></p>
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>类如 <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></p>
+<p><strong>反向链接</strong></p>
+<p> A页面上有B页面的链接，就交A给B做了一个反向链接</p>
+<blockquote>
+<p>任何一个链接都是某一个页面对另一个页面的反向链接。任何一个超链接都是对另一个页面的信任投票。</p>
+</blockquote>
+<p><strong>锚文本</strong></p>
+<p> 在文本上加上超链接，比如：<a href="https://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+<blockquote>
+<p>这就是对另一个页面最好的信任投票，直接告诉了搜索引擎这个链接的属性。</p>
+</blockquote>
+<p><strong>URL超链接</strong></p>
+<p>比如：<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></p>
+<blockquote>
+<p>url就是网站的地址</p>
+</blockquote>
+<p><strong>文本链接</strong></p>
+<p>比如： <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></p>
+<pre><code>搜索引擎是根据(超链接周围文字)来判断该超链接是对谁的一个信任
+</code></pre><h2 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h2><h3 id="内链"><a href="#内链" class="headerlink" title="内链"></a>内链</h3><p>是反向链接的一种重要形式（首页和内页）</p>
+<pre><code>http://yimi.com/      首页
+http://yimi.com/seo   内页
+</code></pre><p><strong>作用：</strong></p>
+<ol>
+<li>它可以上搜索引擎更多的抓取我们的页面，以及可以让网页之间相互进行投票</li>
+<li>内链具备相关、稳定的特点</li>
+</ol>
+<blockquote>
+<p>但一个网页总共内链不易过多</p>
+</blockquote>
+<h3 id="外链"><a href="#外链" class="headerlink" title="外链"></a>外链</h3><p>是反向链接的一种形式，主要指在别的网站网页上对我们网站王页进行的信任投票。</p>
+<p><strong>作用：</strong></p>
+<ol>
+<li>反映了该网站的受欢迎程度：在同等条件下，外链数越多，排名和稳定性越好。同等条件下，越是相关的页面越有价值。</li>
+<li>外链是反向链接的重要组成部分：是搜索引擎对我们网站权威性的评价。</li>
+</ol>
+<p><strong>内容为王，外链为皇</strong></p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="网站地图"><a href="#网站地图" class="headerlink" title="网站地图"></a>网站地图</h3><p>搜索引擎看网站就是看连接，所以由我们网站上所有网页组成的“链接地图”就是我们的网站地图</p>
+<p><strong>作用：</strong></p>
+<p>增加搜索引擎查阅我们网站的效率，可以显著提升我们网站在搜索引擎面前的曝光率，增加搜索引擎对我们网站的到访次数。类似有引导的作用</p>
+<p><strong>位置：</strong></p>
+<p>举例：百度&gt;淘宝&gt;最底部，网站地图</p>
+<h3 id="死链接"><a href="#死链接" class="headerlink" title="死链接"></a>死链接</h3><p>打不开的链接，比如之前一个可以打开的页面被删除了</p>
+<h1 id="html"><a href="#html" class="headerlink" title="html"></a>html</h1><h2 id="html基础"><a href="#html基础" class="headerlink" title="html基础"></a>html基础</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>HTML（Hypertext Markup Language）是用来描述网页的一种标记性语言，是一种规范，一种标准，它通过标记符号还显示网页中的各个部分。</p>
+<ol>
+<li>HTML指超文本标记语言</li>
+<li>HTML不是一种编程语言，而是一直标记语言</li>
+<li>利用一套标记符号（标签），来描述网页</li>
+<li>组成文件的后缀为.html或.htm</li>
+</ol>
+<h3 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h3><ol>
+<li>&lt;元素名&gt;内容&lt;/元素名&gt;</li>
+<li>&lt;元素名/&gt;</li>
+</ol>
+<h3 id="网页结构"><a href="#网页结构" class="headerlink" title="网页结构"></a>网页结构</h3><pre><code>&lt;!DOCTYPE&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;...&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;/boody&gt;
+&lt;/html&gt;
+</code></pre><h2 id="静态化"><a href="#静态化" class="headerlink" title="静态化"></a>静态化</h2><h3 id="静态网页和动态网页"><a href="#静态网页和动态网页" class="headerlink" title="静态网页和动态网页"></a>静态网页和动态网页</h3><ol>
+<li><p>静态网页：服务器上存在的页面</p>
+</li>
+<li><p>动态网页：通过执行asp、php、jsp、.net等程序生成客户端页面代码的网页 </p>
+<pre><code>关键词：架构与内容分离、磨具、转换生成
+
+过程：数据库&gt;动态网页&gt;静态网页
+</code></pre></li>
+</ol>
+<p><strong>静态网页和动态网页的优劣势：</strong></p>
+<blockquote>
+<p>静态网页</p>
+</blockquote>
+<p> 优势： 访问速度快，可以跨平台和服务器</p>
+<blockquote>
+</blockquote>
+<p> 劣势： 占用空间资源多，页面多，难以管理，修改不方便</p>
+<hr>
+<blockquote>
+<p>动态网页</p>
+</blockquote>
+<p>优势： 通过用户请求返回数据库页面，网站易于维护</p>
+<blockquote>
+</blockquote>
+<p>劣势： 页面不真实存在，对搜索引擎不友好</p>
+<h3 id="静态化作用"><a href="#静态化作用" class="headerlink" title="静态化作用"></a>静态化作用</h3><ol>
+<li>有利于搜索引擎抓取（动态页面静态化）</li>
+<li>提高程序性能（静态页面打开速度快）</li>
+</ol>
+<h3 id="静态化处理方式"><a href="#静态化处理方式" class="headerlink" title="静态化处理方式"></a>静态化处理方式</h3><ol>
+<li>插件静态化</li>
+<li>代码静态化</li>
+<li>HttpWebRequest返回页面重定向法</li>
+</ol>
+<h2 id="Nofollow"><a href="#Nofollow" class="headerlink" title="Nofollow"></a>Nofollow</h2><p><strong>概念：</strong>nofollow是一个html标签的属性。这个标签的意义是告诉搜索引擎“不要追踪此网页上的链接”或“不要追踪此特定的链接”</p>
+<pre><code>&lt;a rel=&quot;nofollow&quot; href=&quot;/index.html&quot;&gt;&lt;/a&gt;
+</code></pre><p><strong>作用：</strong>是站长管理和搜索引擎之间对待一个页面中链接或特定链接的方式。</p>
+<p><strong>解读：</strong>比如A页面中有一个链接指向B页面，如果我给这个链接加上nofolloe属性，那么A页面的这个链接就不属于B页面的反向链接，并且也不会分散A页面的权重。</p>
+<p><a href="https://baike.baidu.com/item/%E6%9D%83%E9%87%8D%E4%BC%A0%E9%80%92/5388589?fr=aladdin" target="_blank" rel="noopener">权重传递概念–百度知道</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/07/DOM/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/yimi.JPG"
+                alt="Yimi Dy" />
+            
+              <p class="site-author-name" itemprop="name">Yimi Dy</p>
+              <p class="site-description motion-element" itemprop="description">喋喋以碟以喋喋</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yimidy.github.io" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yimidy97@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wangli0.github.com" title="Java学习天地" target="_blank">Java学习天地</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三大标签"><span class="nav-number">1.1.</span> <span class="nav-text">三大标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">概念介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">1.1.2.</span> <span class="nav-text">作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键词"><span class="nav-number">1.2.</span> <span class="nav-text">关键词</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.2.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章"><span class="nav-number">1.3.</span> <span class="nav-text">文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章标题"><span class="nav-number">1.3.1.</span> <span class="nav-text">文章标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章内容"><span class="nav-number">1.3.2.</span> <span class="nav-text">文章内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户体验"><span class="nav-number">1.4.</span> <span class="nav-text">用户体验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">2.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类-1"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内链"><span class="nav-number">2.2.1.</span> <span class="nav-text">内链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外链"><span class="nav-number">2.2.2.</span> <span class="nav-text">外链</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">2.3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网站地图"><span class="nav-number">2.3.1.</span> <span class="nav-text">网站地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#死链接"><span class="nav-number">2.3.2.</span> <span class="nav-text">死链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html"><span class="nav-number">3.</span> <span class="nav-text">html</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html基础"><span class="nav-number">3.1.</span> <span class="nav-text">html基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2"><span class="nav-number">3.1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法规则"><span class="nav-number">3.1.2.</span> <span class="nav-text">语法规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页结构"><span class="nav-number">3.1.3.</span> <span class="nav-text">网页结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态化"><span class="nav-number">3.2.</span> <span class="nav-text">静态化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态网页和动态网页"><span class="nav-number">3.2.1.</span> <span class="nav-text">静态网页和动态网页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态化作用"><span class="nav-number">3.2.2.</span> <span class="nav-text">静态化作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态化处理方式"><span class="nav-number">3.2.3.</span> <span class="nav-text">静态化处理方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nofollow"><span class="nav-number">3.3.</span> <span class="nav-text">Nofollow</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yimi Dy</span>
+
+  
+</div>
+
+
+ 
+ 
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+ 
+ 
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

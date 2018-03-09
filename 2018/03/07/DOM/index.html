@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="定义及用法   position 属性规定元素的定位类型。 属性 static ： 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。 fixed ：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定 注意：fixed会使元素脱离">
+<meta name="description" content="JavaScript DOM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="position的5种属性">
-<meta property="og:url" content="http://yoursite.com/2018/02/26/position的五种属性/index.html">
+<meta property="og:title" content="yimidy@blog">
+<meta property="og:url" content="http://yoursite.com/2018/03/07/DOM/index.html">
 <meta property="og:site_name" content="yimidy@blog">
-<meta property="og:description" content="定义及用法   position 属性规定元素的定位类型。 属性 static ： 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。 fixed ：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定 注意：fixed会使元素脱离">
+<meta property="og:description" content="JavaScript DOM">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-26T13:50:08.164Z">
+<meta property="og:updated_time" content="2018-03-07T13:08:46.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="position的5种属性">
-<meta name="twitter:description" content="定义及用法   position 属性规定元素的定位类型。 属性 static ： 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。 fixed ：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定 注意：fixed会使元素脱离">
+<meta name="twitter:title" content="yimidy@blog">
+<meta name="twitter:description" content="JavaScript DOM">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/26/position的五种属性/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/07/DOM/"/>
 
 
 
 
 
-  <title>position的5种属性 | yimidy@blog</title>
+  <title> | yimidy@blog</title>
   
 
 
@@ -282,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/position的五种属性/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/DOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yimi Dy">
@@ -299,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">position的5种属性</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T21:11:47+08:00">
-                2018-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T19:00:59+08:00">
+                2018-03-07
               </time>
             
 
@@ -349,23 +349,7 @@
       
 
       
-        <h2 id="定义及用法"><a href="#定义及用法" class="headerlink" title="定义及用法"></a>定义及用法</h2><p>   position 属性规定元素的定位类型。</p>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
-<li>static ： 默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</li>
-<li><p>fixed ：生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定</p>
-<pre><code>注意：fixed会使元素脱离文档流，也就是其他元素会填充它偏离后在页面中原本位置的空隙。
-</code></pre></li>
-<li><p>inherit　：规定应该从父元素继承 position 属性的值。</p>
-</li>
-<li><p>absolute : 生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</p>
-<pre><code>注意：absolute会使元素脱离文档流。
-</code></pre></li>
-<li><p>relative : 生成相对定位的元素，相对于其正常位置进行定位。因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。</p>
-<pre><code>注意：relative不会使元素脱离文档流，也就是其他的元素不会调整位置来弥补它偏离后剩下的空隙。
-</code></pre></li>
-</ul>
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>属性值为absolute对象的z-index属性可以设置层叠显示的次序，它是直接有效的；而属性值为relative对象的z-index属性在设置时要小心，把当前对象的z-index设置为-1是不行的，在firefox中它会无法显示（注意，不是说浏览器有误，而是指如果父对象是根元素body，那么z-index是无效的，任何z-index设置都不会显示在根元素之后，除了IE的解析bug，感谢#19提示），必须设置为0以上，我们如果想让别的对象挡住它，只有将其他对象也设置position为relative，并将z-index属性取一个比它大的值即可。</p>
-
+        <h1 id="JavaScript-DOM"><a href="#JavaScript-DOM" class="headerlink" title="JavaScript DOM"></a>JavaScript DOM</h1>
       
     </div>
     
@@ -389,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/26/浮动及清除浮动/" rel="next" title="浮动及清除浮动">
-                <i class="fa fa-chevron-left"></i> 浮动及清除浮动
+              <a href="/2018/03/07/BOM/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -399,8 +383,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/27/css居中/" rel="prev" title="css水平垂直居中">
-                css水平垂直居中 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/07/SEO基础/" rel="prev" title="SEO基础">
+                SEO基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -549,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义及用法"><span class="nav-number">1.</span> <span class="nav-text">定义及用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提示"><span class="nav-number">3.</span> <span class="nav-text">提示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-DOM"><span class="nav-number">1.</span> <span class="nav-text">JavaScript DOM</span></a></li></ol></div>
             
 
           </div>
