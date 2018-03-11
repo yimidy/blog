@@ -86,10 +86,12 @@
 <meta property="og:site_name" content="yimidy@blog">
 <meta property="og:description" content="内容三大标签概念介绍1.源代码 源代码简单来理解就是浏览器解释网页给搜索引擎看的“语言”，搜索引擎看到的东西和我妈看到的不一样。 2.title标签 &amp;lt;title&amp;gt;搜狐-中国最大的门户网站&amp;lt;/title&amp;gt; 3.keywords标签 &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;搜狐，门户网站，新媒体，网络媒体，新闻，财经，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T11:10:41.167Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20180310151703795?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWltaWR5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-03-10T12:59:50.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SEO基础">
 <meta name="twitter:description" content="内容三大标签概念介绍1.源代码 源代码简单来理解就是浏览器解释网页给搜索引擎看的“语言”，搜索引擎看到的东西和我妈看到的不一样。 2.title标签 &amp;lt;title&amp;gt;搜狐-中国最大的门户网站&amp;lt;/title&amp;gt; 3.keywords标签 &amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;搜狐，门户网站，新媒体，网络媒体，新闻，财经，">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20180310151703795?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWltaWR5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -491,7 +493,80 @@ http://yimi.com/seo   内页
 </code></pre><p><strong>作用：</strong>是站长管理和搜索引擎之间对待一个页面中链接或特定链接的方式。</p>
 <p><strong>解读：</strong>比如A页面中有一个链接指向B页面，如果我给这个链接加上nofolloe属性，那么A页面的这个链接就不属于B页面的反向链接，并且也不会分散A页面的权重。</p>
 <p><a href="https://baike.baidu.com/item/%E6%9D%83%E9%87%8D%E4%BC%A0%E9%80%92/5388589?fr=aladdin" target="_blank" rel="noopener">权重传递概念–百度知道</a></p>
-
+<h2 id="网页地址"><a href="#网页地址" class="headerlink" title="网页地址"></a>网页地址</h2><ol>
+<li><strong>绝对地址：</strong> 文件在网络或本地的绝对位置，具有唯一性</li>
+<li><strong>相对地址：</strong>就是被链接文件相对于当前页面的 地址</li>
+<li><strong>SEO考虑：</strong><br>含有绝对地址的网页对SEO优化更有利。       </li>
+</ol>
+<blockquote>
+<p> 对于未做<a href="https://baike.so.com/doc/5328820-5563992.html" target="_blank" rel="noopener">301重定向</a>的网站，不利于搜索引擎确定主域名</p>
+</blockquote>
+<blockquote>
+<p> 相对地址为他人镜像网站提供方便</p>
+</blockquote>
+<blockquote>
+<p> 绝对地址用于网址规范以及首选域问题的考虑</p>
+</blockquote>
+<h1 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h1><h2 id="http状态码"><a href="#http状态码" class="headerlink" title="http状态码"></a>http状态码</h2><pre><code>http状态码是服务器与客户端（包括用户和爬虫）交流信息的语言  
+</code></pre><ol>
+<li><strong>定义：</strong>我们访问任何一个网页的时候，服务器都会生成网站日志。在日志里会有3为数字的代码，这3为数字就记录了我们的访问动作。这3位数字代码就叫做http状态码。</li>
+<li><p><strong>常见形式：</strong></p>
+<pre><code>2XX  请求已被服务器成功接收
+     200 服务器已成功处理请求并提供了请求网页，正常访问
+     204 服务器成功处理请求，但并无任何返回
+3XX  为完成请求，客户需进一步细化请求（重定向）
+     301 请求的网页已永久被移动到新位置
+     302 请求的网页临时被移到新位置
+     304 该网页自上次请求过后再也没有更新
+4XX  客户错误
+     400 服务器不理解请求语法  
+     403 服务器拒绝请求
+     404 服务器找不到请求的页面，错误页面
+5XX  服务器的错误
+     500 服务器遇到错误，无法完成请求
+     503 服务器当前无法使用（超载或停机维护）
+</code></pre></li>
+<li><p><strong>对SEO的意义：</strong></p>
+<pre><code>通过状态码可以查询搜索引擎爬虫在你网站的爬取情况。
+通过状态码可以看出网站的情况。
+</code></pre></li>
+</ol>
+<h2 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h2><ol>
+<li><strong>定义：</strong>网络爬虫（也叫网络蜘蛛），是一种自动获取网页内容的程序，爬虫抓取的网页将会被搜索引擎系统存储，进行一定的分析，过滤，并进行索引，以便以后的用户能够查询到这个页面。这个获取信息的程序就佳作爬虫。</li>
+<li><strong>爬虫与搜索引擎的关系：</strong>爬虫为搜索引擎收集内容，搜索引擎来展示。</li>
+<li><p><strong>工作流程：</strong>爬虫通过漫游的方式进行抓取。爬虫爬到一个页面后，看到一个链接，然后顺着那个链接又爬到另一个页面，爬虫是不停的从一个页面跳到另一个页面的，它一边下载这个页面，一边提取这个网页中的链接，那个页面上所有的链接都放到一个公共的“待抓取列表”里。而且爬虫有个特点，就是在他访问你网站之前，不去做判断你这个网页本身是怎么样的，不管页面内容判断就抓取，但是会有优先级的划分，尽量不抓取重复的内容，劲量抓取重要的内容 （比如网站的公共部分）。所搜引擎同时会派出多个爬虫进行多线程的抓取，所有被爬虫抓取的网页将会被系统存储，进行一定的分析、过滤（去重），并建立索引，以便以后查询和检索。</p>
+<p> <img src="http://img.blog.csdn.net/20180310151703795?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWltaWR5/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+</li>
+<li><p><strong>分类：</strong>根据搜索引擎来分类<br>   百度爬虫：Baiduspider百度蜘蛛<br>   谷歌爬虫：Googlebot谷歌机器人<br>   soso爬虫：sosospider</p>
+</li>
+</ol>
+<h2 id="搜索引擎入口"><a href="#搜索引擎入口" class="headerlink" title="搜索引擎入口"></a>搜索引擎入口</h2><ol>
+<li><strong>定义：</strong>刚刚建立好的网站，向搜索引擎提交一下，让搜索引擎知道你的网站，让搜索引擎能够访问到你的网站，能自动收录网页（经过一系列审核）。</li>
+<li><strong>提交：</strong>搜索“搜索引擎提交各大入口”</li>
+</ol>
+<h2 id="权重"><a href="#权重" class="headerlink" title="权重"></a>权重</h2><pre><code>搜索引擎对一个网站的任性度。测量不错具体数据。
+</code></pre><h3 id="PR值"><a href="#PR值" class="headerlink" title="PR值"></a>PR值</h3><p><strong>PageRank（网页级别）</strong></p>
+<ol>
+<li>踏实谷歌用于表示网页的等级、重要性用的一种方法，是谷歌何亮一个网站好坏的重要指标之一。</li>
+<li>可以测量。搜索“站长工具&gt;PR值测量”即可查询</li>
+</ol>
+<h2 id="robots"><a href="#robots" class="headerlink" title="robots"></a>robots</h2><ol>
+<li><strong>定义：</strong>一个协议，告诉搜索引擎爬虫什么可以抓取，什么不可以</li>
+<li><strong>位置：</strong>一个网站文档里的robots.txt</li>
+<li><strong>功能：</strong>屏蔽无用信息，节省服务器的贷款资源，提升收录。</li>
+<li><strong>查询：</strong><a href="https://www.taobao.com/robots.txt" target="_blank" rel="noopener">https://www.taobao.com/robots.txt</a></li>
+<li><p><strong>生成：</strong></p>
+<pre><code>法一：新建txt文件，编写格式如下：
+User-agent:  Baiduspider                //禁止百度爬虫抓取
+Allow:  /article                        //允许抓取改文件
+Allow:  /oshtml   
+Disallow:  /product/                   //不允许抓取改文件
+Disallow:  /                           //不允许抓取所有文件 
+</code></pre><p>法二：（百度搜索）站长工具&gt;网站分析&gt;robots</p>
+</li>
+</ol>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="百度开发平台"><a href="#百度开发平台" class="headerlink" title="百度开发平台"></a>百度开发平台</h2><pre><code>后续补充 ...... 
+</code></pre>
       
     </div>
     
@@ -671,7 +746,7 @@ http://yimi.com/seo   内页
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三大标签"><span class="nav-number">1.1.</span> <span class="nav-text">三大标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">概念介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">1.1.2.</span> <span class="nav-text">作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键词"><span class="nav-number">1.2.</span> <span class="nav-text">关键词</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.2.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章"><span class="nav-number">1.3.</span> <span class="nav-text">文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章标题"><span class="nav-number">1.3.1.</span> <span class="nav-text">文章标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章内容"><span class="nav-number">1.3.2.</span> <span class="nav-text">文章内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户体验"><span class="nav-number">1.4.</span> <span class="nav-text">用户体验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">2.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类-1"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内链"><span class="nav-number">2.2.1.</span> <span class="nav-text">内链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外链"><span class="nav-number">2.2.2.</span> <span class="nav-text">外链</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">2.3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网站地图"><span class="nav-number">2.3.1.</span> <span class="nav-text">网站地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#死链接"><span class="nav-number">2.3.2.</span> <span class="nav-text">死链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html"><span class="nav-number">3.</span> <span class="nav-text">html</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html基础"><span class="nav-number">3.1.</span> <span class="nav-text">html基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2"><span class="nav-number">3.1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法规则"><span class="nav-number">3.1.2.</span> <span class="nav-text">语法规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页结构"><span class="nav-number">3.1.3.</span> <span class="nav-text">网页结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态化"><span class="nav-number">3.2.</span> <span class="nav-text">静态化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态网页和动态网页"><span class="nav-number">3.2.1.</span> <span class="nav-text">静态网页和动态网页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态化作用"><span class="nav-number">3.2.2.</span> <span class="nav-text">静态化作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态化处理方式"><span class="nav-number">3.2.3.</span> <span class="nav-text">静态化处理方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nofollow"><span class="nav-number">3.3.</span> <span class="nav-text">Nofollow</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内容"><span class="nav-number">1.</span> <span class="nav-text">内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三大标签"><span class="nav-number">1.1.</span> <span class="nav-text">三大标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">概念介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用"><span class="nav-number">1.1.2.</span> <span class="nav-text">作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键词"><span class="nav-number">1.2.</span> <span class="nav-text">关键词</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.2.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章"><span class="nav-number">1.3.</span> <span class="nav-text">文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章标题"><span class="nav-number">1.3.1.</span> <span class="nav-text">文章标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章内容"><span class="nav-number">1.3.2.</span> <span class="nav-text">文章内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户体验"><span class="nav-number">1.4.</span> <span class="nav-text">用户体验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链接"><span class="nav-number">2.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类-1"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内链"><span class="nav-number">2.2.1.</span> <span class="nav-text">内链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外链"><span class="nav-number">2.2.2.</span> <span class="nav-text">外链</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">2.3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网站地图"><span class="nav-number">2.3.1.</span> <span class="nav-text">网站地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#死链接"><span class="nav-number">2.3.2.</span> <span class="nav-text">死链接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html"><span class="nav-number">3.</span> <span class="nav-text">html</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html基础"><span class="nav-number">3.1.</span> <span class="nav-text">html基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念-2"><span class="nav-number">3.1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法规则"><span class="nav-number">3.1.2.</span> <span class="nav-text">语法规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页结构"><span class="nav-number">3.1.3.</span> <span class="nav-text">网页结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态化"><span class="nav-number">3.2.</span> <span class="nav-text">静态化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态网页和动态网页"><span class="nav-number">3.2.1.</span> <span class="nav-text">静态网页和动态网页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态化作用"><span class="nav-number">3.2.2.</span> <span class="nav-text">静态化作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态化处理方式"><span class="nav-number">3.2.3.</span> <span class="nav-text">静态化处理方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nofollow"><span class="nav-number">3.3.</span> <span class="nav-text">Nofollow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网页地址"><span class="nav-number">3.4.</span> <span class="nav-text">网页地址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术"><span class="nav-number">4.</span> <span class="nav-text">技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http状态码"><span class="nav-number">4.1.</span> <span class="nav-text">http状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫"><span class="nav-number">4.2.</span> <span class="nav-text">爬虫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索引擎入口"><span class="nav-number">4.3.</span> <span class="nav-text">搜索引擎入口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权重"><span class="nav-number">4.4.</span> <span class="nav-text">权重</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PR值"><span class="nav-number">4.4.1.</span> <span class="nav-text">PR值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#robots"><span class="nav-number">4.5.</span> <span class="nav-text">robots</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具"><span class="nav-number">5.</span> <span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#百度开发平台"><span class="nav-number">5.1.</span> <span class="nav-text">百度开发平台</span></a></li></ol></li></ol></div>
             
 
           </div>
