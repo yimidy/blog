@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="yimidy@blog">
 <meta property="og:description" content="同源政策 同源政策（same-origin policy），也叫浏览器的安全基石，防止XSS，CSFR等攻击。  历史：1995年，有Netscape公司引入浏览器的。  概念： 三相同： 协议相同 域名相同 端口号相同   举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T12:24:28.670Z">
+<meta property="og:updated_time" content="2018-03-11T13:59:04.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yimidy@blog">
 <meta name="twitter:description" content="同源政策 同源政策（same-origin policy），也叫浏览器的安全基石，防止XSS，CSFR等攻击。  历史：1995年，有Netscape公司引入浏览器的。  概念： 三相同： 协议相同 域名相同 端口号相同   举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可">
@@ -376,9 +376,11 @@ DOM和JS对象无法获取；
 AJAX请求不能发送。 
 </code></pre></li>
 <li><p><strong>目的：</strong>用来保证用户信息的安全，防止恶意的网站窃取数据。</p>
+<blockquote>
+<p>如你访问一个网站登录自己战鼓信息后再去打开另一个不相关的网站后，如果没有同源限制，那么第二个打开的网站是不是可以访问到你上一个网站的信息（类如cookie值），这样你的用户信息是不是就被泄露了，这样是极不安全的</p>
+</blockquote>
 </li>
 </ol>
-<p>如你访问一个网站登录自己战鼓信息后再去打开另一个不相关的网站后，如果没有同源限制，那么第二个打开的网站是不是可以访问到你上一个网站的信息（类如cookie值），这样你的用户信息是不是就被泄露了，这样是极不安全的</p>
 
       
     </div>
@@ -413,7 +415,7 @@ AJAX请求不能发送。
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/11/跨区请求/" rel="prev" title="">
+              <a href="/2018/03/11/跨域及解决跨区/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
