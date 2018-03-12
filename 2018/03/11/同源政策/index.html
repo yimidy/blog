@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="同源政策 同源政策（same-origin policy），也叫浏览器的安全基石，防止XSS，CSFR等攻击。  历史：1995年，有Netscape公司引入浏览器的。  概念： 三相同： 协议相同 域名相同 端口号相同   举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可">
+<meta name="description" content="同源政策 同源政策（same-origin policy），也叫浏览器的安全基石，防止XSS，CSFR等攻击。  历史：1995年，有Netscape公司引入浏览器的。  概念： 三相同： 协议相同 域名相同 端口号相同      举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yimidy@blog">
 <meta property="og:url" content="http://yoursite.com/2018/03/11/同源政策/index.html">
 <meta property="og:site_name" content="yimidy@blog">
-<meta property="og:description" content="同源政策 同源政策（same-origin policy），也叫浏览器的安全基石，防止XSS，CSFR等攻击。  历史：1995年，有Netscape公司引入浏览器的。  概念： 三相同： 协议相同 域名相同 端口号相同   举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可">
+<meta property="og:description" content="同源政策 同源政策（same-origin policy），也叫浏览器的安全基石，防止XSS，CSFR等攻击。  历史：1995年，有Netscape公司引入浏览器的。  概念： 三相同： 协议相同 域名相同 端口号相同      举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T13:59:04.698Z">
+<meta property="og:updated_time" content="2018-03-12T02:05:49.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yimidy@blog">
-<meta name="twitter:description" content="同源政策 同源政策（same-origin policy），也叫浏览器的安全基石，防止XSS，CSFR等攻击。  历史：1995年，有Netscape公司引入浏览器的。  概念： 三相同： 协议相同 域名相同 端口号相同   举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可">
+<meta name="twitter:description" content="同源政策 同源政策（same-origin policy），也叫浏览器的安全基石，防止XSS，CSFR等攻击。  历史：1995年，有Netscape公司引入浏览器的。  概念： 三相同： 协议相同 域名相同 端口号相同      举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认">
 
 
 
@@ -360,27 +360,19 @@
 端口号相同
 </code></pre></li>
 </ol>
-<pre><code>举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可以省略）。
-
-&gt; 它的同源情况如下：
-&gt; 
-  http://www.example.com/dir2/other.html：同源
-  http://example.com/dir/other.html：不同源（域名不同）
-  http://v2.www.example.com/dir/other.html：不同源（域名不同）
-  http://www.example.com:81/dir/other.html：不同源（端口不同）
-</code></pre><ol>
-<li><p><strong>意义：</strong></p>
+<p>   举例来说，<a href="http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可以省略）。" target="_blank" rel="noopener">http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可以省略）。</a></p>
+<p>   它的同源情况如下：</p>
+<pre><code>http://www.example.com/dir2/other.html：同源
+http://example.com/dir/other.html：不同源（域名不同）
+http://v2.www.example.com/dir/other.html：不同源（域名不同）
+http://www.example.com:81/dir/other.html：不同源（端口不同）
+</code></pre><p>3.<strong>意义：</strong></p>
 <pre><code>限制非同源的网页之间：
 cookie、localStorage、IndexDB等无法获取；
 DOM和JS对象无法获取；
 AJAX请求不能发送。 
-</code></pre></li>
-<li><p><strong>目的：</strong>用来保证用户信息的安全，防止恶意的网站窃取数据。</p>
-<blockquote>
-<p>如你访问一个网站登录自己战鼓信息后再去打开另一个不相关的网站后，如果没有同源限制，那么第二个打开的网站是不是可以访问到你上一个网站的信息（类如cookie值），这样你的用户信息是不是就被泄露了，这样是极不安全的</p>
-</blockquote>
-</li>
-</ol>
+</code></pre><p>4.<strong>目的：</strong>用来保证用户信息的安全，防止恶意的网站窃取数据。</p>
+<p>   如你访问一个网站登录自己战鼓信息后再去打开另一个不相关的网站后，如果没有同源限制，那么第二个打开的网站是不是可以访问到你上一个网站的信息（类如cookie值），这样你的用户信息是不是就被泄露了，这样是极不安全的</p>
 
       
     </div>
@@ -498,7 +490,7 @@ AJAX请求不能发送。
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

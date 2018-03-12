@@ -282,6 +282,287 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yimi Dy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/yimi.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yimidy@blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/API/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T11:31:10+08:00">
+                2018-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          API
+一、定义可以理解为一些应用程序的预留接口，或者更通俗的说是一些预先编译好的函数
+比如你写了一个库，里面有很多函数，如果别人要使用你这个库，但是并不知道每个函数内部是怎么实现的。使用的人需要看你的文档或者注释才知道这个函数的入口参数和返回值或者这个函数是用来做什么的。对于用户来说 ，你的这些函数就是API。
+二、举例说明本人也是在自己理解基础上做的一些分析，如有不对，欢迎来踩
+框架提供微信原生API
+它可以连接微信提供的一些功能，如读取用户信息、本地存储、支付功能等等。
+1.wx.on开头的API是监听某个事件发生的API接口，它会接受一个callback函数作为参数。该事件触发时就会调用这个函数。 
+ 如监听WebSocket连接是否打开事件 
+//先创建一个 WebSocket的连
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/12/API/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yimi Dy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/yimi.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yimidy@blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/11/1/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T22:13:56+08:00">
+                2018-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          跨域请求含义
+跨域是一个域下的文档或脚本试图去访问另一个域下的资源。
+它是由浏览器的同源政策施加的安全限制
+
+跨域的解决方案
+通过jsonp跨域
+document.domain+iframe跨域
+location.hash+iframe跨域
+window.name+iframe跨域
+postMessage跨域
+跨域资源共享（CORS）
+nginx代理跨域
+nodeis中间件代理跨域
+WebSocke协议跨域
+
+jsonp
+实现原理：类如标签可以写入html文件里，添加src属性引入不同域下的文档渲染网页。基于此原理，我们可以动态创建script标签，在添加一个带参网址实现跨区请求。
+原生代码如下：
+
+&lt;script&gt;
+//创建标签
+var script=document.crea
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/11/1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/跨域及解决跨区/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -358,23 +639,18 @@
 它是由浏览器的同源政策施加的安全限制
 
 跨域的解决方案
-通过jsonp跨域
-document.domain+iframe跨域
-location.hash+iframe跨域
-window.name+iframe跨域
-postMessage跨域
-跨域资源共享（CORS）
-nginx代理跨域
-nodeis中间件代理跨域
-WebSocke协议跨域
+通过jsonp跨域 ———————–只能get请求，单向
+document.domain+iframe跨域  —-父子域，子域双向传值
+location.hash+iframe跨域———-同域不同页面，不同域之间单向传值
+window.name+iframe跨域———-不同域之间双向传值
+postMessage跨域——————-
+跨域资源共享(CORS)—————
+nginx代理跨域————————
+nodeis中间件代理跨域————–
+WebSocke协议跨域—————–
 
-jsonp
-实现原理：类如标签可以写入html文件里，添加src属性引入不同域下的文档渲染网页。基于此原理，我们可以动态创建script标签，在添加一个带参网址实现跨区请求。
-原生代码如下：
-
-&lt;script&gt;
-//创建标签
-var script=document.crea
+jsonpjsonp只能用get请求
+1.实现原理：类如标签可以写入html文件里，添加sr
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -511,13 +787,11 @@ var script=document.crea
 端口号相同
 
 
-举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可以省略）。
-
-&gt; 它的同源情况如下：
-&gt; 
-  http://www.example.com/dir2/other.html：同源
-  http://example.com/dir/other.html：不同源（域名不同）
-  http://v2.www.example.com/dir/
+   举例来说，http://www.example.com/dir/page.html这个网址，协议是http://，域名是www.example.com，端口是80（默认端口可以省略）。
+   它的同源情况如下：
+http://www.example.com/dir2/other.html：同源
+http://example.com/dir/other.html：不同源（域名不同）
+http://v2.www.example.com/dir/other.html：不
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1392,271 +1666,11 @@ cookie和sessioncookie   若不设置时间，则表示这个cookie的生命期�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/本地对象、内置对象、宿主对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yimi Dy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/yimi.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yimidy@blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/05/本地对象、内置对象、宿主对象/" itemprop="url">本地对象、内置对象、宿主对象和自定义对象</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T23:41:09+08:00">
-                2018-03-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          本地对象（native object）即，独立于宿主环境的ECMAScript实现提供的对象。
-此时的宿主环境，即用户的机器环境，包括操作系统和浏览器。
-本地对象包括：Object 、Function 、Array 、String 、Boolean 、undefined 、null  、Number 、Date 、RegExp 、Error 、EvalError 、ReferenceError 、TypeError 、SyntaxError 、URIError 、RangeError
-本地对象是有ECMA-2定义的类（引用类型）
-内置对象 （buil-in object）即，有ECMAScript实现提供的，独立于宿主环境的对象，在ECMAScript程序开始执行时出现。
-这意味着开发者不必
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/05/本地对象、内置对象、宿主对象/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/03/数据类型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yimi Dy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/yimi.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yimidy@blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/03/数据类型/" itemprop="url">数据类型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-03T11:24:50+08:00">
-                2018-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          5种简单的数据类型（基本数据类型）：Undefined,Null,Boolean,String,Number1种数据类型（引用数据类型）：Object
-typeof操作符undefined———(typeof)————undefined（没有定义改变量，或定义了但没有初始化）null————————————-object(特殊的null被认为shi一个空的对象引用)booleannumberstringfunctionobject———————————-object
-Undefined使用var声明但未对其初始化
-123456var message;   //var age;   alert(message);//undefined   alert(age);//产生错误  alert(ty
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/03/数据类型/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1706,7 +1720,7 @@ Undefined使用var声明但未对其初始化
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

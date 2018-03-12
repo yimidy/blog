@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="跨域请求含义 跨域是一个域下的文档或脚本试图去访问另一个域下的资源。 它是由浏览器的同源政策施加的安全限制  跨域的解决方案 通过jsonp跨域 document.domain+iframe跨域 location.hash+iframe跨域 window.name+iframe跨域 postMessage跨域 跨域资源共享（CORS） nginx代理跨域 nodeis中间件代理跨域 WebSock">
+<meta name="description" content="跨域请求含义 跨域是一个域下的文档或脚本试图去访问另一个域下的资源。 它是由浏览器的同源政策施加的安全限制  跨域的解决方案 通过jsonp跨域 ———————–只能get请求，单向 document.domain+iframe跨域  —-父子域，子域双向传值 location.hash+iframe跨域———-同域不同页面，不同域之间单向传值 window.name+iframe跨域———-不同">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yimidy@blog">
 <meta property="og:url" content="http://yoursite.com/2018/03/11/跨域及解决跨区/index.html">
 <meta property="og:site_name" content="yimidy@blog">
-<meta property="og:description" content="跨域请求含义 跨域是一个域下的文档或脚本试图去访问另一个域下的资源。 它是由浏览器的同源政策施加的安全限制  跨域的解决方案 通过jsonp跨域 document.domain+iframe跨域 location.hash+iframe跨域 window.name+iframe跨域 postMessage跨域 跨域资源共享（CORS） nginx代理跨域 nodeis中间件代理跨域 WebSock">
+<meta property="og:description" content="跨域请求含义 跨域是一个域下的文档或脚本试图去访问另一个域下的资源。 它是由浏览器的同源政策施加的安全限制  跨域的解决方案 通过jsonp跨域 ———————–只能get请求，单向 document.domain+iframe跨域  —-父子域，子域双向传值 location.hash+iframe跨域———-同域不同页面，不同域之间单向传值 window.name+iframe跨域———-不同">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T14:09:34.885Z">
+<meta property="og:updated_time" content="2018-03-12T11:09:13.953Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yimidy@blog">
-<meta name="twitter:description" content="跨域请求含义 跨域是一个域下的文档或脚本试图去访问另一个域下的资源。 它是由浏览器的同源政策施加的安全限制  跨域的解决方案 通过jsonp跨域 document.domain+iframe跨域 location.hash+iframe跨域 window.name+iframe跨域 postMessage跨域 跨域资源共享（CORS） nginx代理跨域 nodeis中间件代理跨域 WebSock">
+<meta name="twitter:description" content="跨域请求含义 跨域是一个域下的文档或脚本试图去访问另一个域下的资源。 它是由浏览器的同源政策施加的安全限制  跨域的解决方案 通过jsonp跨域 ———————–只能get请求，单向 document.domain+iframe跨域  —-父子域，子域双向传值 location.hash+iframe跨域———-同域不同页面，不同域之间单向传值 window.name+iframe跨域———-不同">
 
 
 
@@ -354,75 +354,217 @@
 <li>它是由浏览器的<strong><a href="http://yiffi.xyz/2018/03/11/%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/" target="_blank" rel="noopener">同源政策</a></strong>施加的安全限制</li>
 </ol>
 <h2 id="跨域的解决方案"><a href="#跨域的解决方案" class="headerlink" title="跨域的解决方案"></a>跨域的解决方案</h2><ol>
-<li>通过jsonp跨域</li>
-<li>document.domain+iframe跨域</li>
-<li>location.hash+iframe跨域</li>
-<li>window.name+iframe跨域</li>
-<li>postMessage跨域</li>
-<li>跨域资源共享（CORS）</li>
-<li>nginx代理跨域</li>
-<li>nodeis中间件代理跨域</li>
-<li>WebSocke协议跨域</li>
+<li>通过jsonp跨域 ———————–只能get请求，单向</li>
+<li>document.domain+iframe跨域  —-父子域，子域双向传值</li>
+<li>location.hash+iframe跨域———-同域不同页面，不同域之间单向传值</li>
+<li>window.name+iframe跨域———-不同域之间双向传值</li>
+<li>postMessage跨域——————-</li>
+<li>跨域资源共享(CORS)—————</li>
+<li>nginx代理跨域————————</li>
+<li>nodeis中间件代理跨域————–</li>
+<li>WebSocke协议跨域—————–</li>
 </ol>
-<h3 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h3><ol>
-<li><strong>实现原理：</strong>类如<scriopt>标签可以写入html文件里，添加src属性引入不同域下的文档渲染网页。基于此原理，我们可以动态创建script标签，在添加一个带参网址实现跨区请求。</scriopt></li>
-<li>原生代码如下：</li>
-</ol>
+<h3 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h3><p><strong>jsonp只能用get请求</strong></p>
+<p>1.<strong>实现原理：</strong>类如<scriopt>标签可以写入html文件里，添加src属性引入不同域下的文档渲染网页。基于此原理，我们可以动态创建script标签，在添加一个带参网址实现跨区请求。</scriopt></p>
+<p>2.原生代码如下：</p>
 <pre><code>&lt;script&gt;
 //创建标签
-var script=document.createElement(&quot;script&quot;);
-script.type=&apos;text/javascript&apos;;
+var script = document.createElement(&quot;script&quot;);
+script.type = &apos;text/javascript&apos;;
 //传参并指定成功时服务器的·回调函数
-script.src=&apos;http://www.domain2.com:8080/login?user=admin&amp;callback=onBack&apos;;
+script.src = &apos;http://www.domain.com:8080/login?user=admin&amp;callback=onBack&apos;;
 //动态添加标签
 document.head.appendChild(scipt);
 //回调执行函数
 function onBack(res){
-  alert(JSON.stringify(res));
+  console.log(JSON.stringify(res));
 }
 &lt;/script&gt;
+</code></pre><p>   同时后台服务器端代码如下：</p>
+<pre><code>&lt;?php
+$callback = $_GET[&apos;callback&apos;];//得到回调函数
+$data = {&quot;user&quot;:&quot;admin&quot;};//得到的数据
+echo $callback.&apos;(&quot;.json_encode($data).&quot;)&apos;;//输出
+?&gt;
 </code></pre><p>   成功时服务端返回如下：</p>
-<pre><code>onBack({&quot;status&quot;：true，&quot;user&quot;:&quot;admin&quot;})
-</code></pre><p>3.jquery代码实现如下：</p>
-<pre><code>&lt;script&gt;
-function onBack(res){
-  alert(JSON.stringify(res));
-}
-
-$.ajax({
-url:&apos;http://www.domain2.com:8080/login&apos;,
-type:&apos;get&apos;,
-dataType:&apos;jsonp&apos;,
-jsonpCallback:&apos;onBack&apos;,//自定义回调函数，或者用ajax的success属性
-data:{}
-});
+<pre><code>onBack({&quot;user&quot;:&quot;admin&quot;})
+</code></pre><p>所以通过<a href="http://www.domain.com:8080/login?user=admin&amp;callback=onBack得到的js文件，就是我们之前定义的onBack数,并且它的参数就是我们需要的json数据，这样我们就跨域获得了我们需要的数据。" target="_blank" rel="noopener">http://www.domain.com:8080/login?user=admin&amp;callback=onBack得到的js文件，就是我们之前定义的onBack数,并且它的参数就是我们需要的json数据，这样我们就跨域获得了我们需要的数据。</a></p>
+<h3 id="document-domain-iframe"><a href="#document-domain-iframe" class="headerlink" title="document.domain+iframe"></a>document.domain+iframe</h3><p><strong>1.原理：</strong>浏览器的同源政策其中限制了浏览器中不同域的框架之间是不能进行js的交互操作的。有一点需要说明，不同的框架之间（父子或同辈），是能够获取到彼此的window对象的，但是却不能使用获取到的window对象的属性和方法(html5中的postMessage方法是一个例外，还有些浏览器比如ie6也可以使用top、parent等少数几个属性)，总之，你可以当做是只能获取到一个几乎无用的window对象。这个时候，document.domain就可以派上用场了，我们把需要跨域交互的两个页面的document.domain都设成相同的域名（一般用顶级域）。</p>
+<p><strong>2.注意：</strong></p>
+<blockquote>
+<p> 这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域；</p>
+</blockquote>
+<blockquote>
+<p> document.domain的设置是有限制的，我们只能把document.domain设置成自身或更高一级的父域，且顶级域必须相同；</p>
+</blockquote>
+<blockquote>
+<p> 只修改两个网页document.domain的方法只适用于<strong>不同子域</strong>的框架间的交互；</p>
+</blockquote>
+<blockquote>
+<p> 在不为子域的网页下想要使用document.domain方法跨域需要将其先修改为父子域。</p>
+</blockquote>
+<p><strong>3.代码如下：</strong></p>
+<p>A窗口 <a href="http://domain.com/" target="_blank" rel="noopener">http://domain.com/</a></p>
+<p>B窗口 <a href="http://www.domain.com/" target="_blank" rel="noopener">http://www.domain.com/</a></p>
+<p>C窗口 <a href="http://js.domain.com/" target="_blank" rel="noopener">http://js.domain.com/</a></p>
+<p><strong>子域：</strong>B/C两个页面相互访问</p>
+<pre><code>//B网页
+&lt;script&gt;
+  document.domain = &apos;domain.com&apos;;
+  var user = &apos;admin&apos;;
 &lt;/script&gt;
-</code></pre><p>4.vue.js代码如下：</p>
-<pre><code>this.$http.jsonp(&apos;http://www.domain2.com:8080/login&apos;, {
-params: {},
-jsonp: &apos;onBack&apos;
-}).then((res) =&gt; {
-console.log(res); 
-})
-</code></pre><p>后端node.js代码示例：</p>
-<pre><code>var querystring = require(&apos;querystring&apos;);
-var http = require(&apos;http&apos;);
-var server = http.createServer();
 
-server.on(&apos;request&apos;, function(req, res) {
-   var params = qs.parse(req.url.split(&apos;?&apos;)[1]);
-   var fn = params.callback;
+//C网页
+&lt;script&gt;
+  document.domain = &apos;domain.com&apos;;
+  //获取A窗口变量
+  console.log(window.user);   //admin
+&lt;/script&gt;
+</code></pre><p><strong>父子域：</strong>A/B两个页面相互访问  </p>
+<pre><code>//A网页
+&lt;iframe id=&apos;iframe&apos; src=&apos;http://www.domain.com/&apos;&gt;&lt;/iframe&gt;
+&lt;script&gt;
+  document.domain = &apos;domain.com&apos;;
+  var user = &apos;admin&apos;;
+&lt;/script&gt;
 
-   // jsonp返回设置
-   res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/javascript&apos; });
-   res.write(fn + &apos;(&apos; + JSON.stringify(params) + &apos;)&apos;);
+//B网页
+&lt;script&gt;
+  document.domain = &apos;domain.com&apos;;
+  //获取A窗口变量
+  console.log(window.parent.user);  //admin
+&lt;/script&gt;
+</code></pre><h3 id="window-name-iframe"><a href="#window-name-iframe" class="headerlink" title="window.name+iframe"></a>window.name+iframe</h3><p><strong>1.原理：</strong>window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面（甚至不同域下）都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的，并不会因新页面的载入而进行重置。并且大小可达2M。</p>
+<p><strong>2.注意：</strong></p>
+<blockquote>
+<p>跨域页面里设置window.name = ‘要传输的值’</p>
+</blockquote>
+<blockquote>
+<p>在要获取数据的页面使用一个隐藏的iframe来充当一个中间角色</p>
+</blockquote>
+<blockquote>
+<p>iframe的src设置为要跨域页面</p>
+</blockquote>
+<blockquote>
+<p>必须把这个隐藏的iframe的src设置成跟所在页面同一个域才行</p>
+</blockquote>
+<p><strong>3.代码如下：</strong></p>
+<p><strong>b向a传参</strong></p>
+<p>比如有一个<a href="http://www.domain1.com/a.html页面。需要通过a.html页面里的js来获取另一个位于不同域上的页面www.domain2.com/b.html中的数据。" target="_blank" rel="noopener">www.domain1.com/a.html页面。需要通过a.html页面里的js来获取另一个位于不同域上的页面www.domain2.com/b.html中的数据。</a></p>
+<pre><code>//a.html网页（http://www.domain1.com/a.html代码：
 
-   res.end();
-});
+var proxy = function(url,callback){
+  var staus = 0;
+  var iframe = document.createElement(&apos;iframe&apos;);
 
-server.listen(&apos;8080&apos;);
-console.log(&apos;Server is running at port 8080...&apos;);
-</code></pre><h3 id="document-domain-iframe"><a href="#document-domain-iframe" class="headerlink" title="document.domain+iframe"></a>document.domain+iframe</h3><p>该方案在讲cookie的两个不同二级域名相互访问cookie值时提到，在<strong><a href="http://yiffi.xyz/2018/03/05/%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E5%87%A0%E7%A7%8D%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">前端本地集中缓存机制</a></strong>博客中                                        </p>
+  //加载要跨域的页面
+  iframe.src=&apos;url&apos;;
+  &lt;!--iframe.src=&apos;http://www.domain2.com/window.name/b.html&apos;+&apos;?user=yi.du&apos;;//也可以带参加载，即传值给它，达到双向传值--&gt;
+
+  //onload事件会触发两次
+  iframe.onload=function(){
+       if(stays == 1){ //第二次同域proxy页成功后，读取同域window.name中数据
+       callback(iframe.contentWindow.name);
+
+       //获取数据后销毁这个ifram，是地方内存；也保证安全，不被其他域的frame js获取
+       iframe.contentWindow.document.write(&apos;&apos;);
+       iframe.contentWindow.close();
+       document.body.removeChild(iframe);
+
+       }else if(status == 0){//第一次加载跨域项，并保留数据window.name,同时切换到同域代理页面   
+                iframe.contenWindow.location = &apos;http://www.domain1.com/proxy.html&apos;;
+                staus = 1; 
+             }
+  };
+  document.body.appendChild(iframe);
+};
+//请求跨域，a页面获取b页面的数据
+proxy(&apos;http://www.domain2.com/b.html&apos;, function(data){
+   console.log(data);
+})；
+
+//b.html页面（http://www.domain2.com/b.html代码：
+&lt;script&gt;
+  window.name = &apos;添加传送数据&apos;;
+&lt;/script&gt;
+</code></pre><p><strong>a、b相互传参</strong></p>
+<p>要是b页面需要a页面传过来参数给它，去访问其他数据，如实现：</p>
+<p>a页面传参给b页面由b页面结合传过来的参数拼接url去获取同b页面域下的a.php页面的数据给a页面</p>
+<pre><code>  //b页面代码，
+   &lt;script&gt;
+   var str = window.location.href.substr(-1,1);
+   $.ajax({
+   type : &apos;get&apos;,
+   url : &apos;http://www.domain2.com/a.php&apos;,
+   async = true,
+   success : function(res){
+window.name = res;
+ }   
+   error : function(){
+ window.name = error;
+   }
+   })
+&lt;/script&gt;
+</code></pre><p>其中：</p>
+<p><strong>中间代理页：</strong>proxy.html页面（<a href="http://www.domain1.com/proxy.html），与a.html网页同域，内容可为空" target="_blank" rel="noopener">http://www.domain1.com/proxy.html），与a.html网页同域，内容可为空</a></p>
+<p>再比如有一个<a href="http://www.domain1.com/a.html页面。需要通过a.html页面里的js来跨域到www.domain2.com/b.html页面" target="_blank" rel="noopener">www.domain1.com/a.html页面。需要通过a.html页面里的js来跨域到www.domain2.com/b.html页面</a></p>
+<h3 id="location-hash-iframe"><a href="#location-hash-iframe" class="headerlink" title="location.hash + iframe"></a>location.hash + iframe</h3><p><strong>1.原理：</strong> a欲与b跨域相互通信，通过中间页c来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信。</p>
+<p><strong>2.代码如下：</strong></p>
+<p>domain1.com域：a.html-&gt;domain2.com域：b.html-&gt;domain1.com域：c.html</p>
+<pre><code>//a.html
+&lt;script&gt;
+  var iframe = document.createElement(&apos;iframe&apos;);
+   iframe.src = &apos;http://www.domain2.com/b.html&apos;+&apos;?#user=yi.du&apos;;
+   ifram.style = &apos;display:none&apos;;
+   document.body.appendChild(iframe);
+   function onCallback(res){
+        alert(res);
+   }
+&lt;/script&gt;
+
+//b.html
+&lt;script&gt;
+  var iframe = document.createElement(&apos;iframe&apos;);
+   iframe.src = &apos;http://www.domain1.com/c.html&apos;;
+   ifram.style = &apos;display:none&apos;;
+   document.body.appendChild(iframe);
+   function onhashchange(){
+      iframe.src = iframe.src + location.hash;
+   };
+&lt;/script&gt;
+
+//c.html
+&lt;script&gt;
+  window.onhashchange = function() {
+  window.parent.parent.onCallback(&apos;hello:&apos; + location.hash.replace(&apos; #user=&apos;, &apos;&apos;));
+  }
+&lt;/script&gt;
+</code></pre><p><strong>3.总结：</strong>简单来说，就是url字符串拼接的方法。</p>
+<p>另：</p>
+<pre><code>若是跳转页面获取相应值，即可
+
+window.location.href = &apos;http://www.domain.com/b.html&apos; + &apos;?#user=yi.du&apos;
+
+ 获取:
+
+window.location.hash
+</code></pre><h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><p><strong>1.原理：</strong>postMessage是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一，它可用于解决以下方面的问题：</p>
+<blockquote>
+<p>a.） 页面和其打开的新窗口的数据传递</p>
+</blockquote>
+<blockquote>
+<p>b.） 多窗口之间消息传递</p>
+</blockquote>
+<blockquote>
+<p>c.） 页面与嵌套的iframe消息传递</p>
+</blockquote>
+<blockquote>
+<p>d.） 上面三个场景的跨域数据传递</p>
+</blockquote>
+<p><strong>2.用法</strong>：</p>
+<p>postMessage(data,origin)方法接受两个参数：</p>
+<p>data： html5规范支持任意基本类型或可复制的对象，但部分浏览器只支持字符串，所以传参时最好用JSON.stringify()序列化。</p>
+<p>origin： 协议+主机+端口号，也可以设置为”*”，表示可以传递给任意窗口，如果要指定和当前窗口同源的话设置为”/“。</p>
 
       
     </div>
@@ -456,6 +598,10 @@ console.log(&apos;Server is running at port 8080...&apos;);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/11/1/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -536,7 +682,7 @@ console.log(&apos;Server is running at port 8080...&apos;);
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -603,7 +749,7 @@ console.log(&apos;Server is running at port 8080...&apos;);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域请求"><span class="nav-number">1.</span> <span class="nav-text">跨域请求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#含义"><span class="nav-number">1.1.</span> <span class="nav-text">含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域的解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">跨域的解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsonp"><span class="nav-number">1.2.1.</span> <span class="nav-text">jsonp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-domain-iframe"><span class="nav-number">1.2.2.</span> <span class="nav-text">document.domain+iframe</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域请求"><span class="nav-number">1.</span> <span class="nav-text">跨域请求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#含义"><span class="nav-number">1.1.</span> <span class="nav-text">含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域的解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">跨域的解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsonp"><span class="nav-number">1.2.1.</span> <span class="nav-text">jsonp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-domain-iframe"><span class="nav-number">1.2.2.</span> <span class="nav-text">document.domain+iframe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-name-iframe"><span class="nav-number">1.2.3.</span> <span class="nav-text">window.name+iframe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location-hash-iframe"><span class="nav-number">1.2.4.</span> <span class="nav-text">location.hash + iframe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postMessage"><span class="nav-number">1.2.5.</span> <span class="nav-text">postMessage</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
