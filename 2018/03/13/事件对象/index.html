@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="跨域请求含义 跨域是一个域下的文档或脚本试图去访问另一个域下的资源。 它是由浏览器的同源政策施加的安全限制  跨域的解决方案 通过jsonp跨域 document.domain+iframe跨域 location.hash+iframe跨域 window.name+iframe跨域 postMessage跨域 跨域资源共享（CORS） nginx代理跨域 nodeis中间件代理跨域 WebSock">
+<meta name="description" content="事件对象定义：再触发DOM上的某个事件，会产生一个事件对象event，这个对象包含所有与事件有关的信息。 DOM上的事件对象只有在事件执行期间，event对象才会存在，一但执行完毕，event对象就被销毁。 DOM级兼容DOM的浏览器会将一个event的对象传入到事件处理程序中。无论指定事件处理程序是DOM0级还是DOM2级。 function fn(){    alert(this);   //">
 <meta property="og:type" content="article">
-<meta property="og:title" content="yimidy@blog">
-<meta property="og:url" content="http://yoursite.com/2018/03/11/1/index.html">
+<meta property="og:title" content="事件对象Event">
+<meta property="og:url" content="http://yoursite.com/2018/03/13/事件对象/index.html">
 <meta property="og:site_name" content="yimidy@blog">
-<meta property="og:description" content="跨域请求含义 跨域是一个域下的文档或脚本试图去访问另一个域下的资源。 它是由浏览器的同源政策施加的安全限制  跨域的解决方案 通过jsonp跨域 document.domain+iframe跨域 location.hash+iframe跨域 window.name+iframe跨域 postMessage跨域 跨域资源共享（CORS） nginx代理跨域 nodeis中间件代理跨域 WebSock">
+<meta property="og:description" content="事件对象定义：再触发DOM上的某个事件，会产生一个事件对象event，这个对象包含所有与事件有关的信息。 DOM上的事件对象只有在事件执行期间，event对象才会存在，一但执行完毕，event对象就被销毁。 DOM级兼容DOM的浏览器会将一个event的对象传入到事件处理程序中。无论指定事件处理程序是DOM0级还是DOM2级。 function fn(){    alert(this);   //">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-11T14:13:56.059Z">
+<meta property="og:updated_time" content="2018-03-13T13:06:23.146Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yimidy@blog">
-<meta name="twitter:description" content="跨域请求含义 跨域是一个域下的文档或脚本试图去访问另一个域下的资源。 它是由浏览器的同源政策施加的安全限制  跨域的解决方案 通过jsonp跨域 document.domain+iframe跨域 location.hash+iframe跨域 window.name+iframe跨域 postMessage跨域 跨域资源共享（CORS） nginx代理跨域 nodeis中间件代理跨域 WebSock">
+<meta name="twitter:title" content="事件对象Event">
+<meta name="twitter:description" content="事件对象定义：再触发DOM上的某个事件，会产生一个事件对象event，这个对象包含所有与事件有关的信息。 DOM上的事件对象只有在事件执行期间，event对象才会存在，一但执行完毕，event对象就被销毁。 DOM级兼容DOM的浏览器会将一个event的对象传入到事件处理程序中。无论指定事件处理程序是DOM0级还是DOM2级。 function fn(){    alert(this);   //">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/11/1/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/13/事件对象/"/>
 
 
 
 
 
-  <title> | yimidy@blog</title>
+  <title>事件对象Event | yimidy@blog</title>
   
 
 
@@ -282,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/13/事件对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yimi Dy">
@@ -299,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">事件对象Event</h1>
         
 
         <div class="post-meta">
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T22:13:56+08:00">
-                2018-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T11:52:50+08:00">
+                2018-03-13
               </time>
             
 
@@ -349,80 +349,170 @@
       
 
       
-        <h1 id="跨域请求"><a href="#跨域请求" class="headerlink" title="跨域请求"></a>跨域请求</h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><ol>
-<li>跨域是一个域下的文档或脚本试图去访问另一个域下的资源。</li>
-<li>它是由浏览器的<strong><a href="http://yiffi.xyz/2018/03/11/%E5%90%8C%E6%BA%90%E6%94%BF%E7%AD%96/" target="_blank" rel="noopener">同源政策</a></strong>施加的安全限制</li>
-</ol>
-<h2 id="跨域的解决方案"><a href="#跨域的解决方案" class="headerlink" title="跨域的解决方案"></a>跨域的解决方案</h2><ol>
-<li>通过jsonp跨域</li>
-<li>document.domain+iframe跨域</li>
-<li>location.hash+iframe跨域</li>
-<li>window.name+iframe跨域</li>
-<li>postMessage跨域</li>
-<li>跨域资源共享（CORS）</li>
-<li>nginx代理跨域</li>
-<li>nodeis中间件代理跨域</li>
-<li>WebSocke协议跨域</li>
-</ol>
-<h3 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h3><ol>
-<li><strong>实现原理：</strong>类如<scriopt>标签可以写入html文件里，添加src属性引入不同域下的文档渲染网页。基于此原理，我们可以动态创建script标签，在添加一个带参网址实现跨区请求。</scriopt></li>
-<li>原生代码如下：</li>
-</ol>
-<pre><code>&lt;script&gt;
-//创建标签
-var script=document.createElement(&quot;script&quot;);
-script.type=&apos;text/javascript&apos;;
-//传参并指定成功时服务器的·回调函数
-script.src=&apos;http://www.domain2.com:8080/login?user=admin&amp;callback=onBack&apos;;
-//动态添加标签
-document.head.appendChild(scipt);
-//回调执行函数
-function onBack(res){
-  alert(JSON.stringify(res));
+        <h1 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h1><p><strong>定义：</strong>再触发DOM上的某个事件，会产生一个事件对象event，这个对象包含所有与事件有关的信息。</p>
+<h2 id="DOM上的事件对象"><a href="#DOM上的事件对象" class="headerlink" title="DOM上的事件对象"></a>DOM上的事件对象</h2><p>只有在事件执行期间，event对象才会存在，一但执行完毕，event对象就被销毁。</p>
+<h3 id="DOM级"><a href="#DOM级" class="headerlink" title="DOM级"></a>DOM级</h3><p>兼容DOM的浏览器会将一个event的对象传入到事件处理程序中。无论指定事件处理程序是DOM0级还是DOM2级。</p>
+<pre><code>function fn(){
+   alert(this);   //这里会出现作用域的问题，在IE中，为window；其他为element
 }
-&lt;/script&gt;
-</code></pre><p>   成功时服务端返回如下：</p>
-<pre><code>onBack({&quot;status&quot;：true，&quot;user&quot;:&quot;admin&quot;})
-</code></pre><p>3.jquery代码实现如下：</p>
-<pre><code>&lt;script&gt;
-function onBack(res){
-  alert(JSON.stringify(res));
-}
+var oBn = document.geyElementById(&quot;oinput&quot;);
+oBn.onclick = function fn(event){
+        alert(event.type);  //click   
+      }
+oBn.addEventListener(&apos;click&apos;, function(event){
+           alert(event.type);   //click
+},false);
+</code></pre><h3 id="html特性指定"><a href="#html特性指定" class="headerlink" title="html特性指定"></a>html特性指定</h3><p>变量event保存着event对象。</p>
+<pre><code>&lt;input type=&apos;button&apos; value=&apos;&apos; onclick=&apos;alert(event.type)&apos;/&gt;  //click
+</code></pre><h3 id="event对象所共有的属性和方法"><a href="#event对象所共有的属性和方法" class="headerlink" title="event对象所共有的属性和方法"></a>event对象所共有的属性和方法</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">bubbles</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">表示事件是否冒泡</td>
+</tr>
+<tr>
+<td style="text-align:left">cancelable</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">表示是否可以取消事件默认事件</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>currentTarget</strong></td>
+<td style="text-align:left">Element</td>
+<td style="text-align:left">其事件处理程序当前正在处理事件的元素</td>
+</tr>
+<tr>
+<td style="text-align:left">defaultPrevented</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">为true表示已经调用了preventDefault</td>
+</tr>
+<tr>
+<td style="text-align:left">detail</td>
+<td style="text-align:left">Element</td>
+<td style="text-align:left">与事件相关的细节</td>
+</tr>
+<tr>
+<td style="text-align:left">eventPhase</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">调用事件处理程序的阶段；1表示捕获阶段，2表示处于目标阶段，3表示冒泡阶段</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong> preventDefault</strong></td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">取消事件的默认行为。前提是cancelable为true</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>stopImmediatePropagetion</strong></td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">取消事件的进一步捕获或冒泡，同时阻止任何事件处理程序调用</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>stopPropagetion</strong></td>
+<td style="text-align:left">Function</td>
+<td style="text-align:left">取消事件的进一步捕获或冒泡，前提是bubble为true</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>target</strong></td>
+<td style="text-align:left">Element</td>
+<td style="text-align:left">事件目标</td>
+</tr>
+<tr>
+<td style="text-align:left">trusted</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">为true表示事件是浏览器生成的，为false表示事件是由开发人员通过js创建的</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">被触发事件的类型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>currentTarget和target</strong></p>
+<pre><code>在事件处理程序中this始终等于currentTarget的值，而target则只是事件的真实目标
+</code></pre><p><strong>阻止事件冒泡</strong> </p>
+<pre><code>preventDefault()方法
 
-$.ajax({
-url:&apos;http://www.domain2.com:8080/login&apos;,
-type:&apos;get&apos;,
-dataType:&apos;jsonp&apos;,
-jsonpCallback:&apos;onBack&apos;,//自定义回调函数，或者用ajax的success属性
-data:{}
-});
-&lt;/script&gt;
-</code></pre><p>4.vue.js代码如下：</p>
-<pre><code>this.$http.jsonp(&apos;http://www.domain2.com:8080/login&apos;, {
-params: {},
-jsonp: &apos;onBack&apos;
-}).then((res) =&gt; {
-console.log(res); 
+var oBn = document.getElementById(&apos;oinput&apos;);
+oBn.onclick = function(evevt) {
+   //若event.cancelable返回true才能执行阻止事件,一般做判断，代码中可不出现
+   if(event.cancelable){
+        event.preventDefault();
+   }
+}
+</code></pre><hr>
+<pre><code> stopPropagetion（）方法
+
+var oBn = document.getElementById(&apos;oinput&apos;);
+oBn.onclick = function(evevt) {
+   alert(&quot;执行我后并停止向上冒泡！&quot;);
+   //若event.bubble返回true才能执行阻止事件,一般做判断，代码中可不出现
+   if(event.bubble){
+        event.stopPropagetion();
+   }
+}
+</code></pre><h2 id="IE中事件对象"><a href="#IE中事件对象" class="headerlink" title="IE中事件对象"></a>IE中事件对象</h2><p>要访问IE事件处理程序的事件对象有几种不同的方法，取决于指定事件处理程序的方法。</p>
+<h3 id="DOM0级"><a href="#DOM0级" class="headerlink" title="DOM0级"></a>DOM0级</h3><pre><code>//event对象作为window的一个属性
+
+var oBn = document.geyElementById(&quot;oinput&quot;);
+oBn.onclick = function fn(){
+        var event = window.event;
+        alert(event.type);  //click   
+      }
+</code></pre><h3 id="IE事件处理程序"><a href="#IE事件处理程序" class="headerlink" title="IE事件处理程序"></a>IE事件处理程序</h3><pre><code>//法一：参数传递
+
+oBn.attachEvent(&apos;onclick&apos;,function(event){
+  alert(event.type);  //click
 })
-</code></pre><p>后端node.js代码示例：</p>
-<pre><code>var querystring = require(&apos;querystring&apos;);
-var http = require(&apos;http&apos;);
-var server = http.createServer();
 
-server.on(&apos;request&apos;, function(req, res) {
-   var params = qs.parse(req.url.split(&apos;?&apos;)[1]);
-   var fn = params.callback;
 
-   // jsonp返回设置
-   res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/javascript&apos; });
-   res.write(fn + &apos;(&apos; + JSON.stringify(params) + &apos;)&apos;);
+//法二：作为window的一个属性
 
-   res.end();
-});
-
-server.listen(&apos;8080&apos;);
-console.log(&apos;Server is running at port 8080...&apos;);
-</code></pre><h3 id="document-domain-iframe"><a href="#document-domain-iframe" class="headerlink" title="document.domain+iframe"></a>document.domain+iframe</h3><p>该方案在讲cookie的两个不同二级域名相互访问cookie值时提到，在<strong><a href="http://yiffi.xyz/2018/03/05/%E5%89%8D%E7%AB%AF%E6%9C%AC%E5%9C%B0%E5%87%A0%E7%A7%8D%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">前端本地集中缓存机制</a></strong>博客中                                        </p>
+oBn.attachEvent(&apos;onclick&apos;,function(){
+  var event = window.event;
+  alert(event.type);  //click
+})
+</code></pre><h3 id="html特性指定-1"><a href="#html特性指定-1" class="headerlink" title="html特性指定"></a>html特性指定</h3><pre><code>同DOM中事件对象处理一致，用event变量来对待处理。
+</code></pre><h3 id="共有属性"><a href="#共有属性" class="headerlink" title="共有属性"></a>共有属性</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cancelBubble</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">默认为false，若为true则取消事件冒泡</td>
+</tr>
+<tr>
+<td style="text-align:left">returnValue</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">默认为true，若为false则取消事件的 默认行为</td>
+</tr>
+<tr>
+<td style="text-align:left">srcElement</td>
+<td style="text-align:left">Element</td>
+<td style="text-align:left">事件目标</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">事件类型</td>
+</tr>
+</tbody>
+</table>
+<p><strong>srcElement</strong><br>由于这里的作用域要根据指定事件的方法来定，所以事件中this不再始终是事件目标，所以要用srcElement属性来判断</p>
+<h3 id="跨浏览器事件对象"><a href="#跨浏览器事件对象" class="headerlink" title="跨浏览器事件对象"></a>跨浏览器事件对象</h3><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  总的来说，DOM0级和DOM1级事件处理程序采用传参来获取event对象；因为IE事件处理程序的对象是window，所以，IE事件对象可以当做是window的一个属性来存在；html特性指定将event当做是定义好的event变量使用</p>
 
       
     </div>
@@ -447,8 +537,8 @@ console.log(&apos;Server is running at port 8080...&apos;);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/11/跨域及解决跨区/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2018/03/12/事件流/" rel="next" title="事件流">
+                <i class="fa fa-chevron-left"></i> 事件流
               </a>
             
           </div>
@@ -457,7 +547,7 @@ console.log(&apos;Server is running at port 8080...&apos;);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/12/API/" rel="prev" title="">
+              <a href="/2018/03/13/跨域及解决跨区/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -540,7 +630,7 @@ console.log(&apos;Server is running at port 8080...&apos;);
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -607,7 +697,7 @@ console.log(&apos;Server is running at port 8080...&apos;);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域请求"><span class="nav-number">1.</span> <span class="nav-text">跨域请求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#含义"><span class="nav-number">1.1.</span> <span class="nav-text">含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域的解决方案"><span class="nav-number">1.2.</span> <span class="nav-text">跨域的解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsonp"><span class="nav-number">1.2.1.</span> <span class="nav-text">jsonp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-domain-iframe"><span class="nav-number">1.2.2.</span> <span class="nav-text">document.domain+iframe</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件对象"><span class="nav-number">1.</span> <span class="nav-text">事件对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM上的事件对象"><span class="nav-number">1.1.</span> <span class="nav-text">DOM上的事件对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM级"><span class="nav-number">1.1.1.</span> <span class="nav-text">DOM级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html特性指定"><span class="nav-number">1.1.2.</span> <span class="nav-text">html特性指定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#event对象所共有的属性和方法"><span class="nav-number">1.1.3.</span> <span class="nav-text">event对象所共有的属性和方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE中事件对象"><span class="nav-number">1.2.</span> <span class="nav-text">IE中事件对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM0级"><span class="nav-number">1.2.1.</span> <span class="nav-text">DOM0级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE事件处理程序"><span class="nav-number">1.2.2.</span> <span class="nav-text">IE事件处理程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html特性指定-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">html特性指定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#共有属性"><span class="nav-number">1.2.4.</span> <span class="nav-text">共有属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨浏览器事件对象"><span class="nav-number">1.2.5.</span> <span class="nav-text">跨浏览器事件对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
