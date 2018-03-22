@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://p2.qhimg.com/t016bbbe5236ef1ffd5.png">
 <meta property="og:image" content="http://p5.qhimg.com/t01b47b8b7d153c07cc.png">
 <meta property="og:image" content="http://p3.qhimg.com/t0118d1d2badbb00521.png">
-<meta property="og:updated_time" content="2018-02-28T05:05:49.367Z">
+<meta property="og:updated_time" content="2018-03-22T07:09:12.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BFC &amp;&amp; IFC">
 <meta name="twitter:description" content="常规流( Normal flow )之称之为常规流，是因为这是相对于后面的浮动和绝对定位的一个概念，浮动和绝对定位元素都脱离了当前的常规流。 在 CSS2.1中，常规流包括块框( block boxes )的块格式化( block formatting )， 行内框( inline boxes )的行内格式化( inline formatting )，块框或行内框的相对定位，以及插入框的定位。 在">
@@ -380,8 +380,7 @@
 <li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此</li>
 <li>计算BFC的高度时，浮动元素也参与计算</li>
 </ol>
-<p>###触发BFC条件 ###</p>
-<ol>
+<h3 id="触发BFC条件"><a href="#触发BFC条件" class="headerlink" title="触发BFC条件"></a>触发BFC条件</h3><ol>
 <li><p>根元素<br> html文档建立，就会触发根元素的BFC，我们在根元素内写几个div元素，会发现内部div垂直排列，本身没有兄弟元素，自然满足B、D、E、F这几条规则，内部块级盒子来自同一个BFC(html)，所以相邻margin会重叠，行内盒子横向就不会重叠。</p>
 </li>
 <li><p>float属性不为none<br> 当一个元素被设置为float:left or right,会触发这个元素，生成BFC区域，使他不仅拥有BFC的渲染规则，而且会给自身带来副作用<br>display:block,但是这个元素不会像行内元素通过设置display:block变为块级元素那样，宽度充满其父元素，而是表现的更像行内块级元素,只会使得行内元素不会收缩包裹其内容.</p>
@@ -558,7 +557,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -625,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常规流-Normal-flow"><span class="nav-number">1.</span> <span class="nav-text">常规流( Normal flow )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC是什么"><span class="nav-number">2.</span> <span class="nav-text">BFC是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Box"><span class="nav-number">2.1.</span> <span class="nav-text">Box</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Formatting-Contaxt"><span class="nav-number">2.2.</span> <span class="nav-text">Formatting Contaxt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC定义"><span class="nav-number">2.3.</span> <span class="nav-text">BFC定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC-布局规则"><span class="nav-number">2.4.</span> <span class="nav-text">BFC 布局规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">2.5.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.6.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IFC"><span class="nav-number">3.</span> <span class="nav-text">IFC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IFC布局规则"><span class="nav-number">3.1.</span> <span class="nav-text">IFC布局规则</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常规流-Normal-flow"><span class="nav-number">1.</span> <span class="nav-text">常规流( Normal flow )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC是什么"><span class="nav-number">2.</span> <span class="nav-text">BFC是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Box"><span class="nav-number">2.1.</span> <span class="nav-text">Box</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Formatting-Contaxt"><span class="nav-number">2.2.</span> <span class="nav-text">Formatting Contaxt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC定义"><span class="nav-number">2.3.</span> <span class="nav-text">BFC定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC-布局规则"><span class="nav-number">2.4.</span> <span class="nav-text">BFC 布局规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#触发BFC条件"><span class="nav-number">2.5.</span> <span class="nav-text">触发BFC条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">2.6.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.7.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IFC"><span class="nav-number">3.</span> <span class="nav-text">IFC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IFC布局规则"><span class="nav-number">3.1.</span> <span class="nav-text">IFC布局规则</span></a></li></ol></li></ol></div>
             
 
           </div>
